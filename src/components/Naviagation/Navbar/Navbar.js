@@ -41,7 +41,7 @@ const Navbar = props => {
             <Toolbar className={classes.toolbar}>
                  <Grid container spacing={2} justify="space-between" alignItems="center">
                     <Hidden mdUp>
-                        <Grid xs={1}>
+                        <Grid item xs={1}>
                             <IconButton
                                 edge="start"
                                 className={classes.menuButton}
@@ -53,19 +53,19 @@ const Navbar = props => {
                         </Grid>
                     </Hidden>
                     <Hidden smDown>
-                        <Grid xs={0} md={3} lg={4}>
+                        <Grid item md={3} lg={4}>
                             <Typography variant="h5" component="h2" className={classes.title}>
                                 AIS Weather
                             </Typography>
                         </Grid>
                     </Hidden>
-                    <Grid xs={11} md={3} lg={4}>
+                    <Grid item xs={11} md={3} lg={4}>
                         <Typography component="div" className={classes.img}>
                             <Logo logoType="appLogo" />
                         </Typography>
                     </Grid>
                     <Hidden smDown>
-                        <Grid md={6} lg={4}>
+                        <Grid item md={6} lg={4}>
                             <Typography component="div">
                                 <NavigationItems />
                             </Typography>

@@ -5,6 +5,7 @@ import SideDrawer from '../../components/Naviagation/SideDrawer/SideDrawer';
 import Modal from '../../components/UI/Modal/Modal';
 import PrivacyPolicy from '../../components/Naviagation/Footer/FooterContent/PrivacyPolicy';
 import Footer from '../../components/Naviagation/Footer/Footer';
+import Container from '@material-ui/core/Container';
 
 
 /**
@@ -40,7 +41,11 @@ const Layout = props => {
             </Modal>
             <Navbar toggleDrawer={handleSideDrawerToggle} />
             <SideDrawer open={sideDrawerIsVisible} closed={handleSideDrawerClose} />
-            <main> {props.children} </main>
+            <main>
+                <Container maxWidth="lg">
+                    {props.children}
+                </Container>
+            </main>
             <Footer showPrivacy={handlePrivacyOpen} />
         </Fragment>
     );

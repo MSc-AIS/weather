@@ -2,35 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e65be58-236a-4eeb-af22-3b07313fc43f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/4203085.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/papeiLogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/statics/privacyPolicy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/Footer/Copyright.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/Footer/Footer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/Footer/Footer.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/Footer/FooterContent/FooterContent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/Footer/FooterContent/FooterContent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/Footer/FooterContent/PrivacyPolicy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/Navbar/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/Navbar/Navbar.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/NavigationItems/NavigationItem/NavigationItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/NavigationItems/NavigationItem/NavigationItem.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/NavigationItems/NavigationItems.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/NavigationItems/NavigationItems.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/SideDrawer/SideDrawer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/SideDrawer/SideDrawer.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Button/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Button/Button.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Logo/Logo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Logo/Logo.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Modal/Modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Modal/Modal.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Cockpit/Cockpit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Cockpit/Cockpit.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Collections/Collections.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/CurrentPosition/CurrentPosition.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/SearchCities/SearchCities.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Naviagation/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Naviagation/Navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/UI" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -93,10 +74,11 @@
       <recent name="X:\WebstormProjects\msc-ais-weather-frondend\src\components\Naviagation\NavigationItems" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\WebstormProjects\msc-ais-weather-frondend\src\containers\SearchCities" />
+      <recent name="X:\WebstormProjects\msc-ais-weather-frondend\src\containers\Collections" />
       <recent name="X:\WebstormProjects\msc-ais-weather-frondend\src\components\Naviagation\NavigationItems" />
       <recent name="X:\WebstormProjects\msc-ais-weather-frondend\src\assets\images" />
       <recent name="X:\WebstormProjects\msc-ais-weather-frondend\src\assets" />
-      <recent name="X:\WebstormProjects\msc-ais-weather-frondend\src\shared" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -123,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611831046013</updated>
       <workItem from="1611831047101" duration="24277000" />
-      <workItem from="1611868379818" duration="721000" />
+      <workItem from="1611868379818" duration="2870000" />
     </task>
     <servers />
   </component>
