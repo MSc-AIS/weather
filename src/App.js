@@ -1,9 +1,9 @@
 import { ThemeProvider } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 
 import './App.css';
 import { theme } from './shared/theme';
-import {Typography} from "@material-ui/core";
+
+import Layout from './hoc/Layout/Layout';
 
 /**
  * @returns {JSX.Element}
@@ -14,12 +14,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
         <div className="App">
-            <Button size="large" color="secondary" variant="contained">
-                Test
-            </Button>
-            <Typography variant="h2">
-                Testing
-            </Typography>
+            <Layout>
+
+            </Layout>
         </div>
     </ThemeProvider>
   );
