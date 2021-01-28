@@ -3,6 +3,9 @@ import thunk from 'redux-thunk';
 
 import currentReducer from './reducers/currentPotision';
 
+/**
+ * @author Stavros Labrinos [stalab at linuxmail.org] on 28/01/21.
+ */
 
 //  middleware enchanters from redux development tools extension
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
