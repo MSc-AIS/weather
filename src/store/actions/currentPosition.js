@@ -92,11 +92,24 @@ export const fetchConditions = city => dispatch => {
     dispatch(fetchConditionsSuccess(cityInfo, displayingData, forecastData));
 };
 
-export const setDisplayingConditions = conditions => {
+export const setForecastToDisplayingConditions = conditions => {
+    const newDisplayingConditions = {
+        id: conditions.id,
+        displaying: {
+            timestamp: conditions.timestamp,
+            temperatureConditions: conditions.dailyTemperatureConditions,
+            weatherConditions: conditions.dailyWeatherConditions,
+            windConditions: conditions.dailyWindConditions
+        }
+    };
     return {
-        type: actionTypes.SET_DISPLAYING_CONDITIONS,
-        temperatureConditions: conditions.dailyTemperatureConditions,
-        weatherConditions: conditions.dailyWeatherConditions,
-        windConditions: conditions.dailyWindConditions
+        type: actionTypes.SET_FORECAST_TO_DISPLAYING_CONDITIONS,
+        displayingConditions: newDisplayingConditions
+    };
+};
+
+export const setCurrentToDisplayingConditions = () => {
+    return {
+        type: actionTypes.SET_CURRENT_TO_DISPLAYING_CONDITIONS
     };
 };

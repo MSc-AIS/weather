@@ -46,12 +46,6 @@ const CurrentPosition = props => {
        }
     }, [city, onInitCity, onInitWeatherConditions, conditionsFetched]);
 
-    const handleDisplayingConditions = dateId => {
-        if (dateId !== weatherConditions.id) {
-            alert(dateId);
-        }
-    };
-
     const cityErrorMsg = cityError ?
         <Typography variant="h5" color="error">
             <ErrorOutlineIcon style={{ fontSize: 22, paddingRight: 12 }}/>
@@ -64,7 +58,6 @@ const CurrentPosition = props => {
             weatherId={weatherConditions.id}
             forecast={forecastConditions}
             hours={weatherConditions.hourly}
-            clicked={handleDisplayingConditions}
             display={weatherConditions.displaying}/> :
         <LoadingProgress />
 

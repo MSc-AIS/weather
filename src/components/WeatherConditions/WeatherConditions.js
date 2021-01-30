@@ -1,7 +1,9 @@
 import { Fragment, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core';
 
 import { mapIconsToDescription, mapIconsToWindDirection } from '../../shared/utility';
+import { setForecastToDisplayingConditions, setCurrentToDisplayingConditions } from '../../store/actions';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
@@ -15,8 +17,8 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import { WiCloudDown, WiHumidity, WiCelsius, WiFahrenheit, WiStrongWind } from 'weather-icons-react';
+import { WiCloudDown, WiHumidity, WiCelsius,
+    WiFahrenheit, WiStrongWind, WiRaindrop } from 'weather-icons-react';
 
 /**
  * @returns {JSX.Element}
@@ -43,6 +45,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const WeatherConditions = props => {
+    const dispatch = useDispatch();
     const classes = useStyles();
 
     const date = new Date(props.display.timestamp * 1000).toDateString();
@@ -51,8 +54,10 @@ const WeatherConditions = props => {
     const today = '29/1/2021';
 
     const [temperature, setTemperature] = useState({
-        points: props.display.temperatureConditions.temperature,
-        feelsLike: props.display.temperatureConditions.feelsLike,
+        points: props.display.temperatureConditions.temperature ?
+            props.display.temperatureConditions.temperature: 1,
+        feelsLike: props.display.temperatureConditions.feelsLike ?
+            props.display.temperatureConditions.feelsLike: 1,
         min: props.display.temperatureConditions.minTemperature,
         max: props.display.temperatureConditions.maxTemperature,
         measurement: 'celsius'
@@ -72,6 +77,14 @@ const WeatherConditions = props => {
             max: (temperature.max - 32) / 1.8,
             measurement: 'celsius'
         });
+    };
+
+    const handleDisplayingConditions = day => {
+        if (day.id !== props.weatherId) {
+            day.id !== today ?
+                dispatch(setForecastToDisplayingConditions(day)) :
+                dispatch(setCurrentToDisplayingConditions());
+        }
     };
 
     return (
@@ -124,18 +137,28 @@ const WeatherConditions = props => {
                         </Grid>
                     </Grid>
                     <Grid item xs={4} className={classes.weatherContainer}>
-                        <Grid item>
-                            <Typography component="div" variant="h5" className={classes.per} color="primary">
-                                {Number.parseInt(temperature.points)}
-                                {temperature.measurement === 'celsius' ? <WiCelsius size={48} /> : <WiFahrenheit size={48} />}
-                            </Typography>
-                        </Grid>
-                        <Grid item>
-                            <Typography component="div" variant="body2" className={classes.per}>
-                                {`Αίσθηση: ${Number.parseInt(temperature.feelsLike)}`}
-                                {temperature.measurement === 'celsius' ? <WiCelsius size={22} /> : <WiFahrenheit size={22} />}
-                            </Typography>
-                        </Grid>
+                        { props.weatherId === today ?
+                            <Fragment>
+                                <Grid item>
+                                    <Typography component="div" variant="h5" className={classes.per} color="primary">
+                                        {Number.parseInt(temperature.points)}
+                                        {temperature.measurement === 'celsius' ? <WiCelsius size={48} /> : <WiFahrenheit size={48} />}
+                                    </Typography>
+                                </Grid>
+                                <Grid item>
+                                    <Typography component="div" variant="body2" className={classes.per}>
+                                        {`Αίσθηση: ${Number.parseInt(temperature.feelsLike)}`}
+                                        {temperature.measurement === 'celsius' ? <WiCelsius size={22} /> : <WiFahrenheit size={22} />}
+                                    </Typography>
+                                </Grid>
+                            </Fragment> :
+                            <Grid item>
+                                <Typography component="div" variant="body2" className={classes.per}>
+                                    <WiRaindrop size={36}/>
+                                    {`${props.display.weatherConditions.rainProbability} %`}
+                                </Typography>
+                            </Grid>
+                        }
                         <Grid item>
                             <Typography component="div" variant="body1" className={classes.per} color="textSecondary">
                                 {`${Number.parseInt(temperature.min)} / ${Number.parseInt(temperature.max)}`}
@@ -196,7 +219,7 @@ const WeatherConditions = props => {
                                     <TableRow
                                         key={day.id}
                                         style={{ cursor: 'pointer' }}
-                                        onClick={() => props.clicked(day.id)}>
+                                        onClick={() => handleDisplayingConditions(day)}>
                                         <TableCell align="left" colSpan={1}>
                                             {new Date(day.timestamp * 1000).toDateString()}
                                         </TableCell>

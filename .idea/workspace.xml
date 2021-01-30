@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e65be58-236a-4eeb-af22-3b07313fc43f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/sample/currentAthens.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/sample/daily.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/sample/hourly.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/LoadingProgress/LoadingProgress.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Naviagation/NavigationItems/NavigationItem/NavigationItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Naviagation/NavigationItems/NavigationItem/NavigationItem.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CurrentPosition/CurrentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CurrentPosition/CurrentPosition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/utility.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/currentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/currentPosition.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
@@ -110,7 +103,8 @@
       <option name="presentableId" value="Default" />
       <updated>1611831046013</updated>
       <workItem from="1611831047101" duration="24277000" />
-      <workItem from="1611868379818" duration="39161000" />
+      <workItem from="1611868379818" duration="39302000" />
+      <workItem from="1612030704936" duration="5025000" />
     </task>
     <servers />
   </component>
