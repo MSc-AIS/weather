@@ -1,0 +1,153 @@
+{
+  "cityGeoPoint": {
+    "coordinates": [
+      23.7162,
+      37.9795
+    ],
+    "cityName": "Europe/Athens"
+  },
+  "currentTemperatureConditions": {
+    "temperature": 3.87,
+    "feelsLike": 0.18,
+    "maxTemperature": 6.67,
+    "minTemperature": 1.0
+  },
+  "daily": [
+    {
+      "timestamp": 1611914400,
+      "dailyTemperatureConditions": {
+        "maxTemperature": 11.7,
+        "minTemperature": 3.86
+      },
+      "dailyWeatherConditions": {
+        "cloudPercentage": 38,
+        "humidityPercentage": 47,
+        "description": "scattered clouds",
+        "rainProbability": 0.0
+      },
+      "dailyWindConditions": {
+        "windSpeed": 3.2,
+        "windDirection": "SOUTH_WEST"
+      }
+    },
+    {
+      "timestamp": 1612000800,
+      "dailyTemperatureConditions": {
+        "maxTemperature": 16.91,
+        "minTemperature": 9.41
+      },
+      "dailyWeatherConditions": {
+        "cloudPercentage": 0,
+        "humidityPercentage": 48,
+        "description": "clear sky",
+        "rainProbability": 0.37
+      },
+      "dailyWindConditions": {
+        "windSpeed": 9.21,
+        "windDirection": "WEST"
+      }
+    },
+    {
+      "timestamp": 1612087200,
+      "dailyTemperatureConditions": {
+        "maxTemperature": 15.04,
+        "minTemperature": 8.52
+      },
+      "dailyWeatherConditions": {
+        "cloudPercentage": 71,
+        "humidityPercentage": 59,
+        "description": "broken clouds",
+        "rainProbability": 0.0
+      },
+      "dailyWindConditions": {
+        "windSpeed": 2.63,
+        "windDirection": "SOUTH_SOUTH_WEST"
+      }
+    },
+    {
+      "timestamp": 1612173600,
+      "dailyTemperatureConditions": {
+        "maxTemperature": 15.25,
+        "minTemperature": 12.87
+      },
+      "dailyWeatherConditions": {
+        "cloudPercentage": 100,
+        "humidityPercentage": 63,
+        "description": "light rain",
+        "rainProbability": 0.82
+      },
+      "dailyWindConditions": {
+        "windSpeed": 2.68,
+        "windDirection": "WEST_SOUTH_WEST"
+      }
+    },
+    {
+      "timestamp": 1612260000,
+      "dailyTemperatureConditions": {
+        "maxTemperature": 16.25,
+        "minTemperature": 11.6
+      },
+      "dailyWeatherConditions": {
+        "cloudPercentage": 100,
+        "humidityPercentage": 68,
+        "description": "light rain",
+        "rainProbability": 0.73
+      },
+      "dailyWindConditions": {
+        "windSpeed": 2.06,
+        "windDirection": "SOUTH"
+      }
+    },
+    {
+      "timestamp": 1612346400,
+      "dailyTemperatureConditions": {
+        "maxTemperature": 17.03,
+        "minTemperature": 11.01
+      },
+      "dailyWeatherConditions": {
+        "cloudPercentage": 4,
+        "humidityPercentage": 62,
+        "description": "clear sky",
+        "rainProbability": 0.49
+      },
+      "dailyWindConditions": {
+        "windSpeed": 2.66,
+        "windDirection": "NORTH"
+      }
+    },
+    {
+      "timestamp": 1612432800,
+      "dailyTemperatureConditions": {
+        "maxTemperature": 16.97,
+        "minTemperature": 10.09
+      },
+      "dailyWeatherConditions": {
+        "cloudPercentage": 0,
+        "humidityPercentage": 48,
+        "description": "clear sky",
+        "rainProbability": 0.0
+      },
+      "dailyWindConditions": {
+        "windSpeed": 0.4,
+        "windDirection": "SOUTH_SOUTH_WEST"
+      }
+    },
+    {
+      "timestamp": 1612519200,
+      "dailyTemperatureConditions": {
+        "maxTemperature": 17.38,
+        "minTemperature": 10.38
+      },
+      "dailyWeatherConditions": {
+        "cloudPercentage": 0,
+        "humidityPercentage": 54,
+        "description": "clear sky",
+        "rainProbability": 0.0
+      },
+      "dailyWindConditions": {
+        "windSpeed": 1.22,
+        "windDirection": "SOUTH_WEST"
+      }
+    }
+  ]
+}

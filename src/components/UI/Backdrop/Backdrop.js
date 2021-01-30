@@ -19,7 +19,8 @@ const CustomBackdrop = (props) => {
     const classes = useStyles();
 
     return (
-        <Backdrop open={props.show} onClick={props.clicked} className={classes.backdrop} />
+        <Backdrop open={props.show} onClick={props.clicked} className={classes.backdrop}>
+        </Backdrop>
     );
 };
 

@@ -1,3 +1,13 @@
 /**
  * @author Stavros Labrinos [stalab at linuxmail.org] on 28/01/21.
  */
+
+export const FETCH_CITY_SUCCESS = 'FETCH_CITY_SUCCESS';
+export const FETCH_CITY_FAIL = 'FETCH_CITY_FAIL';
+
+export const FETCH_CONDITIONS = 'FETCH_CONDITIONS';
+export const FETCH_CONDITIONS_START = 'FETCH_CONDITIONS_START';
+export const FETCH_CONDITIONS_SUCCESS = 'FETCH_CONDITIONS';
+export const FETCH_CONDITIONS_FAIL = 'FETCH_CONDITIONS';
+
+export const SET_DISPLAYING_CONDITIONS = 'SET_DISPLAYING_CONDITIONS';
