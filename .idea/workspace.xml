@@ -6,9 +6,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CurrentPosition/CurrentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CurrentPosition/CurrentPosition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/currentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/currentPosition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/currentPotision.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/currentPotision.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

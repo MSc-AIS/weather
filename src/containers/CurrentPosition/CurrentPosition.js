@@ -24,15 +24,16 @@ const CurrentPosition = props => {
     const weatherConditions = useSelector(state => state.current.displayingConditions);
     const forecastConditions = useSelector(state => state.current.forecastConditions);
     const conditionsFetched = useSelector(state => state.current.conditionsFetched);
+    const conditionsError = useSelector(state => state.current.conditionsError);
 
     //  actions dispatch
     const onInitCity = useCallback(() => {
         dispatch(actions.fetchCity());
     }, [dispatch]);
 
-    const onInitWeatherConditions  = useCallback(() => {
+    const onInitWeatherConditions  = useCallback((city) => {
         dispatch(actions.fetchConditions(city));
-    }, [city, dispatch]);
+    }, [dispatch]);
 
 
     useEffect(() => {
@@ -42,7 +43,7 @@ const CurrentPosition = props => {
            onInitCity();
        } else if (!conditionsFetched) {
            //   get weather condition from backend action
-           onInitWeatherConditions(city);
+           onInitWeatherConditions(city.name);
        }
     }, [city, onInitCity, onInitWeatherConditions, conditionsFetched]);
 
@@ -59,7 +60,12 @@ const CurrentPosition = props => {
             forecast={forecastConditions}
             hours={weatherConditions.hourly}
             display={weatherConditions.displaying}/> :
-        <LoadingProgress />
+        conditionsError ?
+            <Typography variant="h5" color="error">
+                <ErrorOutlineIcon style={{ fontSize: 22, paddingRight: 12 }}/>
+                Έχετε υπερβεί το πλήθος των επιτρεπόμενων κλήσεων στοιχείων καιρού. Προσπαθήστε αύριο
+            </Typography> :
+            <LoadingProgress />;
 
     return (
         <Fragment>

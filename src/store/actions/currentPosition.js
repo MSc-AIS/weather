@@ -61,35 +61,77 @@ const fetchConditionsFail = error => {
 export const fetchConditions = city => dispatch => {
     dispatch(fetchConditionsStart());
     //  getting the data from 3 backend calls
+    axios.get(`http://localhost:9000/ms/ais/api/forecast/current/city/${city}`)
+        .then(response => {
+            console.log('in first');
+            const currentConditions = response.data;
+            console.log(currentConditions);
+            axios.get(`http://localhost:9000/ms/ais/api/forecast/daily/city/${city}`)
+                .then(response => {
+                    const dailyConditions = response.data;
+                    axios.get(`http://localhost:9000/ms/ais/api/forecast/hourly/city/${city}`)
+                        .then(response => {
+                            const hourlyConditions = response.data;
 
-    //  for now response data from json
-    const currentConditions = curSample;
-    const dailyConditions = dailySample;
-    const hourlyConditions = hourlySample;
+                            const cityInfo = {
+                                name: currentConditions.cityGeoPoint.cityName,
+                                coordinates: currentConditions.cityGeoPoint.coordinates
+                            };
 
-    //  manipulating the returned data to the app needs
-    const cityInfo = {
-        name: currentConditions.cityGeoPoint.cityName,
-        coordinates: currentConditions.cityGeoPoint.coordinates
-    };
+                            const displayingData = {
+                                id: new Date(currentConditions.current.timestamp * 1000).toLocaleDateString(),
+                                displaying: {
+                                    ...currentConditions.current
+                                },
+                                hourly: hourlyConditions.hourly
+                            };
 
-    const displayingData = {
-        id: new Date(currentConditions.current.timestamp * 1000).toLocaleDateString(),
-        displaying: {
-            ...currentConditions.current
-        },
-        hourly: hourlyConditions.hourly
-    };
-
-    const forecastData = dailyConditions.daily.map(day => {
-        return {
-            ...day,
-            id: new Date(day.timestamp * 1000).toLocaleDateString(),
-        };
+                            const forecastData = dailyConditions.daily.map(day => {
+                                return {
+                                    ...day,
+                                    id: new Date(day.timestamp * 1000).toLocaleDateString(),
+                                };
+                            });
+                            //  action call to store weather condition data to the store
+                            dispatch(fetchConditionsSuccess(cityInfo, displayingData, forecastData));
+                        }).catch(error => {
+                        dispatch(fetchConditionsFail(error));
+                    })
+                }).catch((error => {
+                dispatch(fetchConditionsFail(error));
+            }))
+        }).catch(error => {
+            dispatch(fetchConditionsFail(error));
     });
 
-    //  action call to store weather condition data to the store
-    dispatch(fetchConditionsSuccess(cityInfo, displayingData, forecastData));
+    //  for now response data from json
+    // const currentConditions = curSample;
+    // const dailyConditions = dailySample;
+    // const hourlyConditions = hourlySample;
+    //
+    // //  manipulating the returned data to the app needs
+    // const cityInfo = {
+    //     name: currentConditions.cityGeoPoint.cityName,
+    //     coordinates: currentConditions.cityGeoPoint.coordinates
+    // };
+    //
+    // const displayingData = {
+    //     id: new Date(currentConditions.current.timestamp * 1000).toLocaleDateString(),
+    //     displaying: {
+    //         ...currentConditions.current
+    //     },
+    //     hourly: hourlyConditions.hourly
+    // };
+    //
+    // const forecastData = dailyConditions.daily.map(day => {
+    //     return {
+    //         ...day,
+    //         id: new Date(day.timestamp * 1000).toLocaleDateString(),
+    //     };
+    // });
+    //
+    // //  action call to store weather condition data to the store
+    // dispatch(fetchConditionsSuccess(cityInfo, displayingData, forecastData));
 };
 
 export const setForecastToDisplayingConditions = conditions => {

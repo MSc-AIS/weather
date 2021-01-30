@@ -51,7 +51,8 @@ const WeatherConditions = props => {
     const date = new Date(props.display.timestamp * 1000).toDateString();
 
     //  sample test today
-    const today = '29/1/2021';
+    // const today = '29/1/2021';
+    const today = new Date().toLocaleDateString();
 
     const [temperature, setTemperature] = useState({
         points: props.display.temperatureConditions.temperature ?

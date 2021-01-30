@@ -18,7 +18,12 @@ const initialState = {
 };
 
 const fetchCitySuccess = (state, action) => {
-    return updateObject(state, { city: action.city });
+    //  only for development
+    const city = {
+        name: action.city.name === 'Athens' ? action.city.name : 'Athens',
+        coordinates: action.city.coordinates
+    }
+    return updateObject(state, { city: city });
 };
 
 const fetchCityError = (state, action) => {
