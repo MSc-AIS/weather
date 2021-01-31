@@ -8,3 +8,9 @@ export {
     setForecastToDisplayingConditions,
     setCurrentToDisplayingConditions
 } from './currentPosition';
+
+export {
+    fetchInputCityConditions,
+    setForecastToDisplay,
+    setCurrentToDisplay
+} from './searchCities';

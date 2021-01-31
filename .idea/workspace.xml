@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e65be58-236a-4eeb-af22-3b07313fc43f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/store/actions/searchCities.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/searchCities.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CurrentPosition/CurrentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CurrentPosition/CurrentPosition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/SearchCities/SearchCities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/SearchCities/SearchCities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/utility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/currentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/currentPosition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/currentPotision.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/currentPotision.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

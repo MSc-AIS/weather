@@ -3,7 +3,7 @@ import { WiMoonAltFull, WiCloudDown, WiDaySunny,
     WiDayRainMix, WiRain, WiThunderstorm, WiSnow, WiFog,
     WiDirectionUp, WiDirectionDownLeft, WiDirectionDownRight,
     WiDirectionDown, WiDirectionLeft, WiDirectionRight,
-    WiDirectionUpLeft, WiDirectionUpRight } from 'weather-icons-react';
+    WiDirectionUpLeft, WiDirectionUpRight, WiDayRain, WiRainWind } from 'weather-icons-react';
 
 /**
  * @author Stavros Labrinos [stalab at linuxmail.org] on 28/01/21.
@@ -28,6 +28,8 @@ export const mapIconsToDescription = (desc, size) => {
         case 'broken clouds': return <WiNightCloudy style={style} size={size} />;
         case 'few clouds': return <WiCloud style={style} size={size} />;
         case 'light rain': return <WiRaindrops style={style} size={size} />;
+        case 'moderate rain': return <WiDayRain style={style} size={size} />;
+        case 'heavy intensity rain': return <WiRainWind style={style} size={size} />;
         case 'shower rain': return <WiDayRainMix style={style} size={size} />;
         case 'rain': return <WiRain style={style} size={size} />;
         case 'thunderstorm': return <WiThunderstorm style={style} size={size} />;

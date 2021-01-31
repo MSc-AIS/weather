@@ -1,9 +1,9 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
-import curSample from '../../assets/sample/currentAthens.json';
-import dailySample from '../../assets/sample/daily.json';
-import hourlySample from '../../assets/sample/hourly.json';
+// import curSample from '../../assets/sample/currentAthens.json';
+// import dailySample from '../../assets/sample/daily.json';
+// import hourlySample from '../../assets/sample/hourly.json';
 
 /**
  * @author Stavros Labrinos [stalab at linuxmail.org] on 28/01/21.
@@ -60,12 +60,11 @@ const fetchConditionsFail = error => {
 
 export const fetchConditions = city => dispatch => {
     dispatch(fetchConditionsStart());
+
     //  getting the data from 3 backend calls
     axios.get(`http://localhost:9000/ms/ais/api/forecast/current/city/${city}`)
         .then(response => {
-            console.log('in first');
             const currentConditions = response.data;
-            console.log(currentConditions);
             axios.get(`http://localhost:9000/ms/ais/api/forecast/daily/city/${city}`)
                 .then(response => {
                     const dailyConditions = response.data;
@@ -104,7 +103,7 @@ export const fetchConditions = city => dispatch => {
             dispatch(fetchConditionsFail(error));
     });
 
-    //  for now response data from json
+    // //  for now response data from json
     // const currentConditions = curSample;
     // const dailyConditions = dailySample;
     // const hourlyConditions = hourlySample;

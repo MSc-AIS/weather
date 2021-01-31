@@ -1,9 +1,7 @@
 import { Fragment, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core';
 
 import { mapIconsToDescription, mapIconsToWindDirection } from '../../shared/utility';
-import { setForecastToDisplayingConditions, setCurrentToDisplayingConditions } from '../../store/actions';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
@@ -45,7 +43,6 @@ const useStyles = makeStyles(() => ({
 }));
 
 const WeatherConditions = props => {
-    const dispatch = useDispatch();
     const classes = useStyles();
 
     const date = new Date(props.display.timestamp * 1000).toDateString();
@@ -78,14 +75,6 @@ const WeatherConditions = props => {
             max: (temperature.max - 32) / 1.8,
             measurement: 'celsius'
         });
-    };
-
-    const handleDisplayingConditions = day => {
-        if (day.id !== props.weatherId) {
-            day.id !== today ?
-                dispatch(setForecastToDisplayingConditions(day)) :
-                dispatch(setCurrentToDisplayingConditions());
-        }
     };
 
     return (
@@ -220,7 +209,7 @@ const WeatherConditions = props => {
                                     <TableRow
                                         key={day.id}
                                         style={{ cursor: 'pointer' }}
-                                        onClick={() => handleDisplayingConditions(day)}>
+                                        onClick={() => props.clicked(day)}>
                                         <TableCell align="left" colSpan={1}>
                                             {new Date(day.timestamp * 1000).toDateString()}
                                         </TableCell>
@@ -228,7 +217,7 @@ const WeatherConditions = props => {
                                             {mapIconsToDescription(day.dailyWeatherConditions.description, 28)}
                                         </TableCell>
                                         <TableCell align="center" colSpan={4} style={{ color: '#798186' }}>
-                                            {`${Number.parseInt(day.dailyTemperatureConditions.maxTemperature)} / ${Number.parseInt(day.dailyTemperatureConditions.maxTemperature)}`}
+                                            {`${Number.parseInt(day.dailyTemperatureConditions.minTemperature)} / ${Number.parseInt(day.dailyTemperatureConditions.maxTemperature)}`}
                                             <WiCelsius size={18} />
                                         </TableCell>
                                     </TableRow>

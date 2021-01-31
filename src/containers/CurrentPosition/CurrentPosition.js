@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { setCurrentToDisplayingConditions, setForecastToDisplayingConditions } from '../../store/actions';
 import Cockpit from '../../components/UI/Cockpit/Cockpit';
 import WeatherConditions from '../../components/WeatherConditions/WeatherConditions';
 import * as actions from '../../store/actions';
@@ -13,10 +14,10 @@ import LoadingProgress from '../../components/UI/LoadingProgress/LoadingProgress
  * @author Stavros Labrinos [stalab at linuxmail.org] on 28/01/21.
  */
 
-const CurrentPosition = props => {
+const CurrentPosition = () => {
     const dispatch = useDispatch();
 
-    //  component state
+    const today = new Date().toLocaleDateString();
 
     //  selectors
     const city = useSelector(state => state.current.city);
@@ -47,6 +48,15 @@ const CurrentPosition = props => {
        }
     }, [city, onInitCity, onInitWeatherConditions, conditionsFetched]);
 
+
+    const handleDisplayingConditions = day => {
+        if (day.id !== weatherConditions.id) {
+            day.id !== today ?
+                dispatch(setForecastToDisplayingConditions(day)) :
+                dispatch(setCurrentToDisplayingConditions());
+        }
+    };
+
     const cityErrorMsg = cityError ?
         <Typography variant="h5" color="error">
             <ErrorOutlineIcon style={{ fontSize: 22, paddingRight: 12 }}/>
@@ -59,11 +69,12 @@ const CurrentPosition = props => {
             weatherId={weatherConditions.id}
             forecast={forecastConditions}
             hours={weatherConditions.hourly}
-            display={weatherConditions.displaying}/> :
+            display={weatherConditions.displaying}
+            clicked={handleDisplayingConditions} /> :
         conditionsError ?
             <Typography variant="h5" color="error">
                 <ErrorOutlineIcon style={{ fontSize: 22, paddingRight: 12 }}/>
-                Έχετε υπερβεί το πλήθος των επιτρεπόμενων κλήσεων στοιχείων καιρού. Προσπαθήστε αύριο
+                Έχετε υπερβεί το πλήθος των επιτρεπόμενων κλήσεων στοιχείων καιρού. Προσπαθήστε αργότερα
             </Typography> :
             <LoadingProgress />;
 
