@@ -11,6 +11,7 @@ const navigationItems = props => (
         <NavigationItem link="/" exact>Αρχική</NavigationItem>
         <NavigationItem link="/collection" exact>Συλλογές</NavigationItem>
         <NavigationItem link="/search" exact>Αναζήτηση</NavigationItem>
+        <NavigationItem link="/auth/sign-in" exact>Είσοδος</NavigationItem>
 
         {/*{props.isAuthenticated ? <NavigationItem link="/orders">Orders</NavigationItem> : null}*/}
         {/*{!props.isAuthenticated*/}

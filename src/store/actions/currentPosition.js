@@ -102,35 +102,6 @@ export const fetchConditions = city => dispatch => {
         }).catch(error => {
             dispatch(fetchConditionsFail(error));
     });
-
-    // //  for now response data from json
-    // const currentConditions = curSample;
-    // const dailyConditions = dailySample;
-    // const hourlyConditions = hourlySample;
-    //
-    // //  manipulating the returned data to the app needs
-    // const cityInfo = {
-    //     name: currentConditions.cityGeoPoint.cityName,
-    //     coordinates: currentConditions.cityGeoPoint.coordinates
-    // };
-    //
-    // const displayingData = {
-    //     id: new Date(currentConditions.current.timestamp * 1000).toLocaleDateString(),
-    //     displaying: {
-    //         ...currentConditions.current
-    //     },
-    //     hourly: hourlyConditions.hourly
-    // };
-    //
-    // const forecastData = dailyConditions.daily.map(day => {
-    //     return {
-    //         ...day,
-    //         id: new Date(day.timestamp * 1000).toLocaleDateString(),
-    //     };
-    // });
-    //
-    // //  action call to store weather condition data to the store
-    // dispatch(fetchConditionsSuccess(cityInfo, displayingData, forecastData));
 };
 
 export const setForecastToDisplayingConditions = conditions => {

@@ -8,6 +8,8 @@ import Layout from './hoc/Layout/Layout';
 import CurrentPosition from './containers/CurrentPosition/CurrentPosition';
 import SearchCities from './containers/SearchCities/SearchCities';
 import Collections from './containers/Collections/Collections';
+import SignIn from './containers/Auth/SignIn';
+import SignUp from './containers/Auth/SignUp';
 
 /**
  * @returns {JSX.Element}
@@ -22,6 +24,8 @@ function App() {
                 <Switch>
                     <Route path="/collection" exact component={Collections} />
                     <Route path="/search" exact component={SearchCities} />
+                    <Route path="/auth/sign-in" exact component={SignIn} />
+                    <Route path="/auth/sign-up" exact component={SignUp} />
                     <Route path="/" exact component={CurrentPosition} />
                 </Switch>
             </Layout>

@@ -18,7 +18,15 @@ const initialState = {
 };
 
 const fetchInputCityConditionsStart = state => {
-    return updateObject(state, { loading: true,  conditionsFetched: false});
+    return updateObject(state, {
+        city: null,
+        loading: true,
+        conditionsFetched: false,
+        displayingConditions: null,
+        currentConditions: null,
+        forecastConditions: null,
+        conditionsError: null
+    });
 };
 
 const fetchInputCityConditionsSuccess = (state, action) => {
