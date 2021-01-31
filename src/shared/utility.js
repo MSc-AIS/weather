@@ -16,6 +16,14 @@ export const updateObject = (oldObject, updatedProperties) => {
     }
 };
 
+export const capitalizeStr = str => {
+    return str
+        .toLowerCase()
+        .split(' ')
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ');
+};
+
 const style = {
     color: '#116149',
 };

@@ -2,6 +2,7 @@ import { Fragment, useState, useCallback } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
 import { fetchInputCityConditions, setCurrentToDisplay, setForecastToDisplay } from '../../store/actions';
+import { capitalizeStr } from '../../shared/utility';
 import Cockpit from '../../components/UI/Cockpit/Cockpit';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -34,7 +35,7 @@ const SearchCities = () => {
 
     const onInputCityConditions =useCallback(event => {
         event.preventDefault();
-        dispatch(fetchInputCityConditions(cityName));
+        dispatch(fetchInputCityConditions(capitalizeStr(cityName.trim())));
     }, [cityName, dispatch]);
 
     const handleDisplayingConditions = day => {
