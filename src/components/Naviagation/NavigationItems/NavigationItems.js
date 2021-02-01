@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+
 import classes from './NavigationItems.module.css';
 import NavigationItem from './NavigationItem/NavigationItem';
 
@@ -6,18 +8,23 @@ import NavigationItem from './NavigationItem/NavigationItem';
  * @author Stavros Labrinos [stalab at linuxmail.org] on 28/01/21.
  */
 
-const navigationItems = props => (
-    <ul className={classes.NavigationItems}>
-        <NavigationItem link="/" exact>Αρχική</NavigationItem>
-        <NavigationItem link="/collection" exact>Συλλογές</NavigationItem>
-        <NavigationItem link="/search" exact>Αναζήτηση</NavigationItem>
-        <NavigationItem link="/auth/sign-in" exact>Είσοδος</NavigationItem>
+const NavigationItems = props => {
+    const isAuth = useSelector(state => state.auth.token !== null);
 
-        {/*{props.isAuthenticated ? <NavigationItem link="/orders">Orders</NavigationItem> : null}*/}
-        {/*{!props.isAuthenticated*/}
-        {/*    ? <NavigationItem link="/auth">Authenticate</NavigationItem>*/}
-        {/*    : <NavigationItem link="/logout">Logout</NavigationItem>}*/}
-    </ul>
-);
+    return (
+        isAuth ?
+            <ul className={classes.NavigationItems}>
+                <NavigationItem link="/" exact>Αρχική</NavigationItem>
+                <NavigationItem link="/collection" exact>Συλλογές</NavigationItem>
+                <NavigationItem link="/search" exact>Αναζήτηση</NavigationItem>
+                <NavigationItem link="/auth/sign-out" exact>Έξοδος</NavigationItem>
+            </ul> :
+            <ul className={classes.NavigationItems}>
+                <NavigationItem link="/" exact>Αρχική</NavigationItem>
+                <NavigationItem link="/search" exact>Αναζήτηση</NavigationItem>
+                <NavigationItem link="/auth/sign-in" exact>Είσοδος</NavigationItem>
+            </ul>
+    );
+};
 
-export default navigationItems;
+export default NavigationItems;

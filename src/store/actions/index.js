@@ -14,3 +14,9 @@ export {
     setForecastToDisplay,
     setCurrentToDisplay
 } from './searchCities';
+
+export {
+    authSignIn,
+    authSignUp,
+    authCheckState
+} from './auth';
