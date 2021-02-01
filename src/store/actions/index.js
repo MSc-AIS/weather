@@ -20,3 +20,5 @@ export {
     authSignUp,
     authCheckState
 } from './auth';
+
+export { fetchCitiesCollection } from './collection';
