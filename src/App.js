@@ -11,6 +11,7 @@ import Layout from './hoc/Layout/Layout';
 import CurrentPosition from './containers/CurrentPosition/CurrentPosition';
 import SearchCities from './containers/SearchCities/SearchCities';
 import Collections from './containers/Collections/Collections';
+import CityConditions from './components/CityConditions/CityConditions';
 import SignIn from './containers/Auth/SignIn';
 import SignUp from './containers/Auth/SignUp';
 import Logout from './containers/Auth/SignOut';
@@ -36,6 +37,7 @@ function App() {
     const authRouting = isAuth ?
         <Switch>
             <Route path="/collection" exact component={Collections} />
+            <Route path="/collection/:cityName" exact component={CityConditions} />
             <Route path="/search" exact component={SearchCities} />
             <Route path="/auth/sign-out" exact component={Logout} />
             <Route path="/" exact component={CurrentPosition} />

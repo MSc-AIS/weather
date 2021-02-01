@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios-weather';
+import { clearCitiesCollection } from './index';
 
 /**
  * @author Stavros Lamprinos [stalab at linuxmail.org] on 1/2/2021.
@@ -25,13 +26,18 @@ const authFail = error => {
     };
 };
 
-export const logout = () => {
-    //  remove local storage user information
-    localStorage.removeItem('token');
-
+const logoutSuccess = () => {
     return {
         type: actionTypes.AUTH_LOGOUT
     };
+};
+
+export const logout = () => dispatch => {
+    //  remove local storage user information
+    localStorage.removeItem('token');
+    //  clear user cities collection on logout
+    dispatch(clearCitiesCollection());
+    dispatch(logoutSuccess());
 };
 
 export const authSignIn = (email, password) => {

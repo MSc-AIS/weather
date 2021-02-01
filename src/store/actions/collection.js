@@ -32,3 +32,9 @@ export const fetchCitiesCollection = token => dispatch => {
             dispatch(fetchCitiesCollectionFail(error));
         });
 };
+
+export const clearCitiesCollection = () => {
+    return {
+        type: actionTypes.CLEAR_CITIES_COLLECTION
+    };
+};

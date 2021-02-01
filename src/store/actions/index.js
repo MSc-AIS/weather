@@ -21,4 +21,7 @@ export {
     authCheckState
 } from './auth';
 
-export { fetchCitiesCollection } from './collection';
+export {
+    fetchCitiesCollection,
+    clearCitiesCollection
+} from './collection';
