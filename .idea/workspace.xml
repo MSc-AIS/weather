@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e65be58-236a-4eeb-af22-3b07313fc43f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/apple-touch-icon-152x152.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/utility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/sample/currentAthens.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/sample/daily.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/sample/hourly.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/SearchCities/SearchCities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/SearchCities/SearchCities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/collection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/currentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/currentPosition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/searchCities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/searchCities.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/UI/Backdrop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -62,11 +74,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/components/UI/Backdrop" />
       <recent name="$PROJECT_DIR$/src/hoc" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="X:\WebstormProjects\msc-ais-weather-frondend\src\assets\sample" />
-      <recent name="X:\WebstormProjects\msc-ais-weather-frondend\src\components\UI" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="X:\WebstormProjects\msc-ais-weather-frondend\src\assets\sample" />

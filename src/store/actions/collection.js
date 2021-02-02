@@ -59,9 +59,8 @@ export const deleteCity = (cityId, token) => dispatch => {
         });
 };
 
-export const addCity = (coordinates, token) => dispatch => {
-    console.log('started adding city');
-    axios.post(`ms/ais/api/user/city?tokenId=${token}&lon=${coordinates[0]}&lat=${coordinates[1]}`)
+export const addCity = (cityId, token) => dispatch => {
+    axios.post(`ms/ais/api/user/city?tokenId=${token}&cityId=${cityId}`)
         .then(response => {
             console.log(response.data);
             //  dispatch depends on the response data

@@ -148,10 +148,13 @@ const WeatherConditions = props => {
                                 </Grid>
                             </Fragment> :
                             <Grid item>
-                                <Typography component="div" variant="body2" className={classes.per}>
-                                    <WiRaindrop size={36}/>
-                                    {`${props.display.weatherConditions.rainProbability} %`}
-                                </Typography>
+                                {props.display.weatherConditions.rainProbability ?
+                                    <Typography component="div" variant="body2" className={classes.per}>
+                                        <WiRaindrop size={36}/>
+                                        {`${props.display.weatherConditions.rainProbability} %`}
+                                    </Typography> : null
+                                }
+
                             </Grid>
                         }
                         <Grid item>
@@ -164,7 +167,7 @@ const WeatherConditions = props => {
                             <Typography component="div" variant="body2" className={classes.per}>
                                 <WiStrongWind size={30} style={{paddingRight: 12}} />
                                 {`${props.display.windConditions.windSpeed} km/h`}
-                                {mapIconsToWindDirection(props.display.weatherConditions.windDirection)}
+                                {mapIconsToWindDirection(props.display.windConditions.windDirection)}
                             </Typography>
                         </Grid>
                     </Grid>
@@ -240,7 +243,6 @@ const WeatherConditions = props => {
                             startIcon={<SaveIcon />}
                             size="large"
                             color="secondary"
-                            // variant="contained"
                             onClick={props.insertClicked}>
                             ΑΠΟΘΗΚΕΥΣΗ
                         </Button>
