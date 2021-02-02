@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
+import {mapWeatherConditions} from "../../shared/utility";
 
 // import curSample from '../../assets/sample/currentAthens.json';
 // import dailySample from '../../assets/sample/daily.json';
@@ -62,45 +63,59 @@ export const fetchConditions = city => dispatch => {
     dispatch(fetchConditionsStart());
 
     //  getting the data from 3 backend calls
-    axios.get(`http://localhost:9000/ms/ais/api/forecast/current/city/${city}`)
-        .then(response => {
-            const currentConditions = response.data;
-            axios.get(`http://localhost:9000/ms/ais/api/forecast/daily/city/${city}`)
-                .then(response => {
-                    const dailyConditions = response.data;
-                    axios.get(`http://localhost:9000/ms/ais/api/forecast/hourly/city/${city}`)
-                        .then(response => {
-                            const hourlyConditions = response.data;
+    // axios.get(`http://localhost:9000/ms/ais/api/forecast/current/city/${city}`)
+    //     .then(response => {
+    //         const currentConditions = response.data;
+    //         axios.get(`http://localhost:9000/ms/ais/api/forecast/daily/city/${city}`)
+    //             .then(response => {
+    //                 const dailyConditions = response.data;
+    //                 axios.get(`http://localhost:9000/ms/ais/api/forecast/hourly/city/${city}`)
+    //                     .then(response => {
+    //                         const hourlyConditions = response.data;
+    //
+    //                         const cityInfo = {
+    //                             name: currentConditions.cityGeoPoint.cityName,
+    //                             coordinates: currentConditions.cityGeoPoint.coordinates
+    //                         };
+    //
+    //                         const displayingData = {
+    //                             id: new Date(currentConditions.current.timestamp * 1000).toLocaleDateString(),
+    //                             displaying: {
+    //                                 ...currentConditions.current
+    //                             },
+    //                             hourly: hourlyConditions.hourly
+    //                         };
+    //
+    //                         const forecastData = dailyConditions.daily.map(day => {
+    //                             return {
+    //                                 ...day,
+    //                                 id: new Date(day.timestamp * 1000).toLocaleDateString(),
+    //                             };
+    //                         });
+    //                         //  action call to store weather condition data to the store
+    //                         dispatch(fetchConditionsSuccess(cityInfo, displayingData, forecastData));
+    //                     }).catch(error => {
+    //                     dispatch(fetchConditionsFail(error));
+    //                 })
+    //             }).catch((error => {
+    //             dispatch(fetchConditionsFail(error));
+    //         }))
+    //     }).catch(error => {
+    //         dispatch(fetchConditionsFail(error));
+    // });
 
-                            const cityInfo = {
-                                name: currentConditions.cityGeoPoint.cityName,
-                                coordinates: currentConditions.cityGeoPoint.coordinates
-                            };
 
-                            const displayingData = {
-                                id: new Date(currentConditions.current.timestamp * 1000).toLocaleDateString(),
-                                displaying: {
-                                    ...currentConditions.current
-                                },
-                                hourly: hourlyConditions.hourly
-                            };
-
-                            const forecastData = dailyConditions.daily.map(day => {
-                                return {
-                                    ...day,
-                                    id: new Date(day.timestamp * 1000).toLocaleDateString(),
-                                };
-                            });
-                            //  action call to store weather condition data to the store
-                            dispatch(fetchConditionsSuccess(cityInfo, displayingData, forecastData));
-                        }).catch(error => {
-                        dispatch(fetchConditionsFail(error));
-                    })
-                }).catch((error => {
-                dispatch(fetchConditionsFail(error));
-            }))
-        }).catch(error => {
-            dispatch(fetchConditionsFail(error));
+    // concurrent async calls with join promises. Stavros Labrinos [stalab at linuxmail.org] on 2/2/21.
+    Promise.all([
+        axios.get(`http://localhost:9000/ms/ais/api/forecast/current/city/${city}`),
+        axios.get(`http://localhost:9000/ms/ais/api/forecast/daily/city/${city}`),
+        axios.get(`http://localhost:9000/ms/ais/api/forecast/hourly/city/${city}`)
+    ]).then(response => {
+        const { cityInfo, displayingData, forecastData } = mapWeatherConditions(response);
+        //  action call to store weather condition data to the store
+        dispatch(fetchConditionsSuccess(cityInfo, displayingData, forecastData));
+    }).catch(error => {
+        dispatch(fetchConditionsFail(error));
     });
 };
 

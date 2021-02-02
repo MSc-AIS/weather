@@ -83,3 +83,31 @@ export const mapIconsToWindDirection = direction => {
         default: return <WiDirectionUp style={windStyle} />;
     }
 };
+
+export const mapWeatherConditions = (response) => {
+    const currentConditions = response[0].data;
+    const dailyConditions = response[1].data;
+    const hourlyConditions = response[2].data;
+
+    const cityInfo = {
+        name: currentConditions.cityGeoPoint.cityName,
+        coordinates: currentConditions.cityGeoPoint.coordinates
+    };
+
+    const displayingData = {
+        id: new Date(currentConditions.current.timestamp * 1000).toLocaleDateString(),
+        displaying: {
+            ...currentConditions.current
+        },
+        hourly: hourlyConditions.hourly
+    };
+
+    const forecastData = dailyConditions.daily.map(day => {
+        return {
+            ...day,
+            id: new Date(day.timestamp * 1000).toLocaleDateString(),
+        };
+    });
+
+    return { cityInfo, displayingData, forecastData };
+};
