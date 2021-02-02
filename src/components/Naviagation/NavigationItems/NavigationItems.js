@@ -15,14 +15,14 @@ const NavigationItems = props => {
         isAuth ?
             <ul className={classes.NavigationItems}>
                 <NavigationItem link="/" exact>Αρχική</NavigationItem>
-                <NavigationItem link="/collection" exact>Συλλογές</NavigationItem>
-                <NavigationItem link="/search" exact>Αναζήτηση</NavigationItem>
-                <NavigationItem link="/auth/sign-out" exact>Έξοδος</NavigationItem>
+                <NavigationItem link="/collection">Συλλογές</NavigationItem>
+                <NavigationItem link="/search">Αναζήτηση</NavigationItem>
+                <NavigationItem link="/auth/sign-out">Έξοδος</NavigationItem>
             </ul> :
             <ul className={classes.NavigationItems}>
                 <NavigationItem link="/" exact>Αρχική</NavigationItem>
-                <NavigationItem link="/search" exact>Αναζήτηση</NavigationItem>
-                <NavigationItem link="/auth/sign-in" exact>Είσοδος</NavigationItem>
+                <NavigationItem link="/search">Αναζήτηση</NavigationItem>
+                <NavigationItem link="/auth/sign-in">Είσοδος</NavigationItem>
             </ul>
     );
 };

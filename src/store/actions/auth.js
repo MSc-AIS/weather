@@ -32,12 +32,17 @@ const logoutSuccess = () => {
     };
 };
 
-export const logout = () => dispatch => {
-    //  remove local storage user information
-    localStorage.removeItem('token');
-    //  clear user cities collection on logout
-    dispatch(clearCitiesCollection());
-    dispatch(logoutSuccess());
+export const logout = token => dispatch => {
+    //  deleting token from the backend
+    axios.delete(`ms/ais/api/user/signout?tokenId=${token}`)
+        .then(response => {
+            //  remove local storage user information
+            localStorage.removeItem('token');
+            //  clear user cities collection on logout
+            dispatch(clearCitiesCollection());
+            dispatch(logoutSuccess());
+        })
+        .catch(error => console.log(error));
 };
 
 export const authSignIn = (email, password) => {
@@ -72,12 +77,10 @@ export const authSignUp = (firstName, lastName, email, password) => {
         //  SignUp
         axios.post(`ms/ais/api/user/signup`, authData)
             .then(response => {
-                // console.log(response);
                 // store token into the local storage
                 localStorage.setItem('token', response.data);
 
                 dispatch(authSuccess(response.data));
-                console.log('done token');
             })
             .catch(error => {
                 console.log(error);
@@ -89,5 +92,7 @@ export const authSignUp = (firstName, lastName, email, password) => {
 export const authCheckState = () => dispatch => {
     const token = localStorage.getItem('token');
 
-    dispatch(token ? authSuccess(token) : logout());
+    if (token) {
+        dispatch(authSuccess(token));
+    }
 };

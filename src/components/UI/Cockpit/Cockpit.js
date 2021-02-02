@@ -12,6 +12,7 @@ const cockpit = props => {
         <Typography className={classes.Title}
                     variant="h4"
                     component="h2"
+                    style={{ marginBottom: '2rem' }}
                     color="textPrimary">
             {props.title}
         </Typography>

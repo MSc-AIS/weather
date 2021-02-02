@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 
 import { logout } from '../../store/actions/auth';
@@ -12,8 +12,15 @@ import { logout } from '../../store/actions/auth';
 const Logout = () => {
     const dispatch = useDispatch();
 
+    const token = useSelector(state => state.auth.token);
+
+    //  async action dispatching in order to post logout to the backend
+    const onUserLogout = useCallback(() => {
+        dispatch(logout(token));
+    }, [dispatch, token]);
+
     useEffect(() => {
-        dispatch(logout());
+        onUserLogout();
     });
 
     return <Redirect to="/" />;
