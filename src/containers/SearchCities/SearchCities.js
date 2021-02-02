@@ -1,8 +1,14 @@
-import { Fragment, useState, useCallback } from 'react';
+import {Fragment, useState, useCallback, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import { fetchInputCityConditions, setCurrentToDisplay, setForecastToDisplay } from '../../store/actions';
-import { capitalizeStr } from '../../shared/utility';
+import {
+    fetchCitiesCollection,
+    fetchInputCityConditions,
+    setCurrentToDisplay,
+    setForecastToDisplay,
+    addCity
+} from '../../store/actions';
+import { capitalizeStr, arrayEquals } from '../../shared/utility';
 import Cockpit from '../../components/UI/Cockpit/Cockpit';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -24,12 +30,10 @@ const SearchCities = () => {
     const today = new Date().toLocaleDateString();
 
     //  selectors
-    const city = useSelector(state => state.search.city);
-    const loading = useSelector(state => state.search.loading);
-    const weatherConditions = useSelector(state => state.search.displayingConditions);
-    const forecastConditions = useSelector(state => state.search.forecastConditions);
-    const conditionsFetched = useSelector(state => state.search.conditionsFetched);
-    const conditionsError = useSelector(state => state.search.conditionsError);
+    const { city, loading, forecastConditions, conditionsFetched, conditionsError,
+        displayingConditions } = useSelector(state => state.search);
+    const token = useSelector(state => state.auth.token);
+    const collection = useSelector(state => state.collection.collection);
 
     const [cityName, setCityName] = useState('');
 
@@ -39,23 +43,49 @@ const SearchCities = () => {
     }, [cityName, dispatch]);
 
     const handleDisplayingConditions = day => {
-        if (day.id !== weatherConditions.id) {
+        if (day.id !== displayingConditions.id) {
             day.id !== today ?
                 dispatch(setForecastToDisplay(day)) :
                 dispatch(setCurrentToDisplay());
         }
     };
 
+    //  dispatching action to fetch user cities collection
+    const onFetchCitiesCollection = useCallback(() => {
+        dispatch(fetchCitiesCollection(token));
+    }, [dispatch, token]);
+
+    //  componentDidMount
+    useEffect(() => {
+        if (token && collection.length === 0) {
+            onFetchCitiesCollection();
+        }
+    }, [onFetchCitiesCollection, token, collection.length]);
+
+    // insert if the user doesn't have this city in the collection and is authorized
+    const showInsertBtn = () => {
+        return collection
+            .filter(c => arrayEquals(c.cityGeoPoint.coordinates, city.coordinates)).length === 0 && token;
+    };
+
+    const onAddCity = useCallback(() => {
+        if (city) {
+            dispatch(addCity(city.coordinates, token));
+        }
+    }, [dispatch, city, token]);
+
     const displayLoading = loading ?
         <LoadingProgress /> : null;
 
-    const wConditions = conditionsFetched && (weatherConditions !== null) ?
+    const wConditions = conditionsFetched && (displayingConditions !== null) ?
         <WeatherConditions
             city={city}
-            weatherId={weatherConditions.id}
+            weatherId={displayingConditions.id}
             forecast={forecastConditions}
-            hours={weatherConditions.hourly}
-            display={weatherConditions.displaying}
+            hours={displayingConditions.hourly}
+            showInsert={showInsertBtn()}
+            insertClicked={onAddCity}
+            display={displayingConditions.displaying}
             clicked={handleDisplayingConditions} /> :
         conditionsError ?
             <Typography variant="h5" color="error">

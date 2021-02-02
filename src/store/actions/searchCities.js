@@ -29,7 +29,6 @@ const fetchInputCityConditionsFail = error => {
 
 export const fetchInputCityConditions = city => dispatch => {
     dispatch(fetchInputCityConditionsStart());
-    console.log(`http://localhost:9000/ms/ais/api/forecast/current/city/${city}`);
     //  getting the data from 3 backend calls
     axios.get(`http://localhost:9000/ms/ais/api/forecast/current/city/${city}`)
         .then(response => {
@@ -39,7 +38,6 @@ export const fetchInputCityConditions = city => dispatch => {
                     const dailyConditions = response.data;
                     axios.get(`http://localhost:9000/ms/ais/api/forecast/hourly/city/${city}`)
                         .then(response => {
-                            console.log('in', response.data);
                             const hourlyConditions = response.data;
 
                             const cityInfo = {

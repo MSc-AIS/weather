@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { makeStyles } from '@material-ui/core';
 
 import { mapIconsToDescription, mapIconsToWindDirection } from '../../shared/utility';
@@ -17,7 +17,8 @@ import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import { WiCloudDown, WiHumidity, WiCelsius,
     WiFahrenheit, WiStrongWind, WiRaindrop } from 'weather-icons-react';
-
+import CardActions from "@material-ui/core/CardActions";
+import SaveIcon from '@material-ui/icons/Save';
 /**
  * @returns {JSX.Element}
  * @author Stavros Labrinos [stalab at linuxmail.org] on 28/01/21.
@@ -39,6 +40,12 @@ const useStyles = makeStyles(() => ({
     },
     card: {
         marginBottom: '2rem'
+    },
+    hrStyle: {
+        width: '98%'
+    },
+    saveButton: {
+        justifyContent: 'center'
     }
 }));
 
@@ -47,8 +54,6 @@ const WeatherConditions = props => {
 
     const date = new Date(props.display.timestamp * 1000).toDateString();
 
-    //  sample test today
-    // const today = '29/1/2021';
     const today = new Date().toLocaleDateString();
 
     const [temperature, setTemperature] = useState({
@@ -167,7 +172,7 @@ const WeatherConditions = props => {
             </CardContent>
             { props.weatherId === today ?
                 <Fragment>
-                    <hr style={{ width: '98%' }}/>
+                    <hr className={classes.hrStyle} />
                     <CardContent>
                         <TableContainer>
                             <Table size="small">
@@ -199,7 +204,7 @@ const WeatherConditions = props => {
                         </TableContainer>
                     </CardContent>
                 </Fragment> : null }
-            <hr style={{ width: '98%' }} />
+            <hr className={classes.hrStyle} />
             <CardContent>
                 <TableContainer>
                     <Table size="medium">
@@ -227,6 +232,21 @@ const WeatherConditions = props => {
                     </Table>
                 </TableContainer>
             </CardContent>
+            {props.showInsert ?
+                <Fragment>
+                    <hr className={classes.hrStyle} />
+                    <CardActions className={classes.saveButton}>
+                        <Button
+                            startIcon={<SaveIcon />}
+                            size="large"
+                            color="secondary"
+                            // variant="contained"
+                            onClick={props.insertClicked}>
+                            ΑΠΟΘΗΚΕΥΣΗ
+                        </Button>
+                    </CardActions>
+                </Fragment> : null
+            }
         </Card>
     );
 };

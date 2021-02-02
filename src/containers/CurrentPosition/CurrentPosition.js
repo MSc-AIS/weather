@@ -20,13 +20,8 @@ const CurrentPosition = () => {
     const today = new Date().toLocaleDateString();
 
     //  selectors
-    const city = useSelector(state => state.current.city);
-    const cityError = useSelector(state => state.current.cityError);
-    const loading = useSelector(state => state.current.loading);
-    const weatherConditions = useSelector(state => state.current.displayingConditions);
-    const forecastConditions = useSelector(state => state.current.forecastConditions);
-    const conditionsFetched = useSelector(state => state.current.conditionsFetched);
-    const conditionsError = useSelector(state => state.current.conditionsError);
+    const { city, loading, forecastConditions, conditionsFetched, conditionsError,
+        displayingConditions, cityError } = useSelector(state => state.current);
 
     //  actions dispatch
     const onInitCity = useCallback(() => {
@@ -43,7 +38,8 @@ const CurrentPosition = () => {
        if (!city) {
            //   get city from public API action
            onInitCity();
-       } else if (!conditionsFetched) {
+           //   the api may return null as success response. Checking for city again
+       } else if (!conditionsFetched && city) {
            //   get weather condition from backend action
            onInitWeatherConditions(city.name);
        }
@@ -51,26 +47,28 @@ const CurrentPosition = () => {
 
 
     const handleDisplayingConditions = day => {
-        if (day.id !== weatherConditions.id) {
+        if (day.id !== displayingConditions.id) {
             day.id !== today ?
                 dispatch(setForecastToDisplayingConditions(day)) :
                 dispatch(setCurrentToDisplayingConditions());
         }
     };
 
-    const cityErrorMsg = cityError ?
-        <Typography variant="h5" color="error">
-            <ErrorOutlineIcon style={{ fontSize: 22, paddingRight: 12 }}/>
-            Δεν είναι δυνατή η λήψη της τρέχουσας τοποθεσίας. Προσπαθήστε αργότερα
-        </Typography> : null;
+    const cityErrorMsg = cityError || !city ?
+        cityError ?
+            <Typography variant="h5" color="error">
+                <ErrorOutlineIcon style={{ fontSize: 22, paddingRight: 12 }}/>
+                Δεν είναι δυνατή η λήψη της τρέχουσας τοποθεσίας. Προσπαθήστε αργότερα
+            </Typography> : <LoadingProgress /> :
+            null;
 
     const wConditions = conditionsFetched ?
         <WeatherConditions
             city={city}
-            weatherId={weatherConditions.id}
+            weatherId={displayingConditions.id}
             forecast={forecastConditions}
-            hours={weatherConditions.hourly}
-            display={weatherConditions.displaying}
+            hours={displayingConditions.hourly}
+            display={displayingConditions.displaying}
             clicked={handleDisplayingConditions} /> :
         conditionsError ?
             <Typography variant="h5" color="error">
