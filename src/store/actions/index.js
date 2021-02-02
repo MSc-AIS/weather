@@ -23,5 +23,6 @@ export {
 
 export {
     fetchCitiesCollection,
-    clearCitiesCollection
+    clearCitiesCollection,
+    deleteCity
 } from './collection';

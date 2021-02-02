@@ -38,3 +38,24 @@ export const clearCitiesCollection = () => {
         type: actionTypes.CLEAR_CITIES_COLLECTION
     };
 };
+
+const startDeleteCity = cityId => {
+    return {
+        type: actionTypes.DELETE_CITY,
+        cityId
+    };
+};
+
+export const deleteCity = (cityId, token) => dispatch => {
+
+    //  post the city for delete to the backend
+    axios.delete(`ms/ais/api/user/city?tokenId=${token}&cityId=${cityId}`)
+        .then(response => {
+            //  delete city from the store
+            console.log(response);
+            dispatch(startDeleteCity(cityId));
+        })
+        .catch(error => {
+            console.log(error);
+        });
+};

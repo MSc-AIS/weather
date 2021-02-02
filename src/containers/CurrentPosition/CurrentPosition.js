@@ -22,6 +22,7 @@ const CurrentPosition = () => {
     //  selectors
     const city = useSelector(state => state.current.city);
     const cityError = useSelector(state => state.current.cityError);
+    const loading = useSelector(state => state.current.loading);
     const weatherConditions = useSelector(state => state.current.displayingConditions);
     const forecastConditions = useSelector(state => state.current.forecastConditions);
     const conditionsFetched = useSelector(state => state.current.conditionsFetched);
@@ -76,7 +77,7 @@ const CurrentPosition = () => {
                 <ErrorOutlineIcon style={{ fontSize: 22, paddingRight: 12 }}/>
                 Έχετε υπερβεί το πλήθος των επιτρεπόμενων κλήσεων στοιχείων καιρού. Προσπαθήστε αργότερα
             </Typography> :
-            <LoadingProgress />;
+            loading ? <LoadingProgress /> : null;
 
     return (
         <Fragment>

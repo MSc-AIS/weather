@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 
 import axios from '../../axios-weather';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-import { fetchCitiesCollection } from '../../store/actions';
+import { fetchCitiesCollection, deleteCity } from '../../store/actions';
 import Cockpit from '../../components/UI/Cockpit/Cockpit';
 import City from '../../components/City/City';
 import LoadingProgress from '../../components/UI/LoadingProgress/LoadingProgress';
@@ -44,19 +44,18 @@ const Collections = () => {
     }, [onFetchCitiesCollection, collection.length]);
 
     const handleShowDetails = cityName => {
-        console.log('handleDetails');
         history.push(`${history.location.pathname}/${cityName}`);
     };
 
-    const handleDeleteCity = cityId => {
-        console.log('deletingCity', cityId, token);
-    };
+    const handleDeleteCity = useCallback(cityId => {
+        dispatch(deleteCity(cityId, token));
+    }, [dispatch, token]);
 
     const cities = loading ?
         <LoadingProgress /> :
         collection.map(city => (
             <Grid item xs={12} sm={6} md={4} key={city.id}>
-                <City content={city}
+                <City {...city}
                       showDetails={handleShowDetails}
                       deleteCity={handleDeleteCity} />
             </Grid>

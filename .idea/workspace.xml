@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e65be58-236a-4eeb-af22-3b07313fc43f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/City/City.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CityConditions/CityConditions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/City/City.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/City/City.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CityConditions/CityConditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityConditions/CityConditions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Collections/Collections.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Collections/Collections.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/CurrentPosition/CurrentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CurrentPosition/CurrentPosition.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/collection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/collection.js" afterDir="false" />

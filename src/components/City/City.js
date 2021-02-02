@@ -14,21 +14,20 @@ const useStyles = makeStyles((theme) => ({
         color: 'white'
     },
     deleteButton: {
-        flex: 1
+        justifyContent: 'center'
     }
 }));
 
 const City = props => {
     const classes = useStyles();
 
-    const { id, cityGeoPoint, country } = props.content;
+    const { id, cityGeoPoint, country } = props;
 
     return (
         <Card>
             <CardHeader
                 title={cityGeoPoint.cityName}
                 titleTypographyProps={{ align: 'center' }}
-                subheaderTypographyProps={{ align: 'center', color: 'initial' }}
                 action={<LocationCityIcon fontSize="large" />}
                 className={classes.cardHeader} />
             <CardActionArea onClick={() => props.showDetails(cityGeoPoint.cityName)}>
@@ -42,8 +41,8 @@ const City = props => {
                 </CardContent>
             </CardActionArea>
             <hr style={ {color: '#2e35c5', width: '90%'} }/>
-            <CardActions>
-                <IconButton aria-label="delete" onClick={() => props.deleteCity(id)} className={classes.deleteButton}>
+            <CardActions className={classes.deleteButton}>
+                <IconButton aria-label="delete" onClick={() => props.deleteCity(id)}>
                     <DeleteIcon fontSize="large" color="error"/>
                 </IconButton>
             </CardActions>
