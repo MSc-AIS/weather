@@ -13,6 +13,7 @@ const cockpit = props => {
                     variant="h4"
                     component="h2"
                     style={{ marginBottom: '2rem' }}
+                    id="back-to-top-anchor"
                     color="textPrimary">
             {props.title}
         </Typography>

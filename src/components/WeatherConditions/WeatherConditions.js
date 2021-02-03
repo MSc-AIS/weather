@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles} from '@material-ui/core';
 
-import { mapIconsToDescription, mapIconsToWindDirection, capitalizeStr } from '../../shared/utility';
+import { mapIconsToDescription,
+    mapIconsToWindDirection, capitalizeStr } from '../../shared/utility';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
@@ -17,7 +18,7 @@ import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import { WiCloudDown, WiHumidity, WiCelsius,
     WiFahrenheit, WiStrongWind, WiRaindrop } from 'weather-icons-react';
-import CardActions from "@material-ui/core/CardActions";
+import CardActions from '@material-ui/core/CardActions';
 import SaveIcon from '@material-ui/icons/Save';
 /**
  * @returns {JSX.Element}

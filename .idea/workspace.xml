@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e65be58-236a-4eeb-af22-3b07313fc43f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Naviagation/ScrollTop/ScrollTop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CityConditions/CityConditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityConditions/CityConditions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Naviagation/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Naviagation/Navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Naviagation/SideDrawer/SideDrawer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Naviagation/SideDrawer/SideDrawer.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Cockpit/Cockpit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Cockpit/Cockpit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/CurrentPosition/CurrentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CurrentPosition/CurrentPosition.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/SearchCities/SearchCities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/SearchCities/SearchCities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/collection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/currentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/currentPosition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/searchCities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/searchCities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/collection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/utility.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +108,7 @@
       <workItem from="1611831047101" duration="24277000" />
       <workItem from="1611868379818" duration="39302000" />
       <workItem from="1612030704936" duration="5025000" />
-      <workItem from="1612305644219" duration="2015000" />
+      <workItem from="1612305644219" duration="5340000" />
     </task>
     <servers />
   </component>

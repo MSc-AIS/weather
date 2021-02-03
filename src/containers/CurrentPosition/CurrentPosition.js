@@ -48,6 +48,12 @@ const CurrentPosition = () => {
 
     const handleDisplayingConditions = day => {
         if (day.id !== displayingConditions.id) {
+            const anchor = document.querySelector('#back-to-top-anchor');
+
+            if (anchor) {
+                anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
             day.id !== today ?
                 dispatch(setForecastToDisplayingConditions(day)) :
                 dispatch(setCurrentToDisplayingConditions());

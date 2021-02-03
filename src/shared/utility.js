@@ -58,7 +58,7 @@ export const mapIconsToDescription = (desc, size) => {
 };
 
 const windStyle = {
-    fontSize: 30,
+    fontSize: 50,
     paddingLeft: 10
 };
 
