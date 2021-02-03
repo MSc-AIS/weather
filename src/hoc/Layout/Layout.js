@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, memo } from 'react';
 
 import Navbar from '../../components/Naviagation/Navbar/Navbar';
 import SideDrawer from '../../components/Naviagation/SideDrawer/SideDrawer';
@@ -51,5 +51,5 @@ const Layout = props => {
     );
 };
 
-export default Layout;
+export default memo(Layout);
 

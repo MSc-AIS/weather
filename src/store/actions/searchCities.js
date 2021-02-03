@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes';
 import { mapWeatherConditions } from '../../shared/utility';
-import axios from 'axios';
+import axiosWeather from '../../axios-weather';
 
 /**
  * @author Stavros Labrinos [stalab at linuxmail.org] on 31/01/21.
@@ -32,9 +32,9 @@ export const fetchInputCityConditions = city => dispatch => {
     dispatch(fetchInputCityConditionsStart());
     // concurrent async calls with join promises. Stavros Labrinos [stalab at linuxmail.org] on 2/2/21.
     Promise.all([
-        axios.get(`http://localhost:9000/ms/ais/api/forecast/current/city/${city}`),
-        axios.get(`http://localhost:9000/ms/ais/api/forecast/daily/city/${city}`),
-        axios.get(`http://localhost:9000/ms/ais/api/forecast/hourly/city/${city}`)
+        axiosWeather.get(`ms/ais/api/forecast/current/city/${city}`),
+        axiosWeather.get(`ms/ais/api/forecast/daily/city/${city}`),
+        axiosWeather.get(`ms/ais/api/forecast/hourly/city/${city}`)
     ]).then(response => {
         const { cityInfo, displayingData, forecastData } = mapWeatherConditions(response);
         //  action call to store weather condition data to the store

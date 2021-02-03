@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { makeStyles } from '@material-ui/core';
 
-import { mapIconsToDescription, mapIconsToWindDirection } from '../../shared/utility';
+import { mapIconsToDescription, mapIconsToWindDirection, capitalizeStr } from '../../shared/utility';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
@@ -127,7 +127,7 @@ const WeatherConditions = props => {
                         </Grid>
                         <Grid item>
                             <Typography component="div" variant="h5" className={classes.per} color="textSecondary">
-                                {props.display.weatherConditions.description}
+                                {capitalizeStr(props.display.weatherConditions.description)}
                             </Typography>
                         </Grid>
                     </Grid>

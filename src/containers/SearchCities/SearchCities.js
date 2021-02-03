@@ -15,9 +15,9 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import SearchIcon from '@material-ui/icons/Search'
 import Typography from '@material-ui/core/Typography';
-import WeatherConditions from "../../components/WeatherConditions/WeatherConditions";
-import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
-import LoadingProgress from "../../components/UI/LoadingProgress/LoadingProgress";
+import WeatherConditions from '../../components/WeatherConditions/WeatherConditions';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import LoadingProgress from '../../components/UI/LoadingProgress/LoadingProgress';
 
 /**
  * @returns {JSX.Element}

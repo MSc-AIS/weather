@@ -3,7 +3,8 @@ import { updateObject } from '../../shared/utility';
 
 const initialState = {
     collection: [],
-    loading: false
+    loading: false,
+    collectionError: null
 };
 
 const fetchCitiesCollectionStart = state => {
@@ -18,7 +19,7 @@ const fetchCitiesCollectionSuccess = (state, action) => {
 };
 
 const fetchCitiesCollectionFail = (state, action) => {
-    return updateObject(state, { error: action.error, loading: false });
+    return updateObject(state, { collectionError: action.error, loading: false });
 };
 
 const clearCitiesCollection = state => {
@@ -31,6 +32,12 @@ const deleteCity = (state, action) => {
     return updateObject(state, { collection: updatedCollection });
 };
 
+const addCity = (state, action) => {
+    const updatedCollection = state.collection.concat(action.newCity);
+
+    return updateObject(state, updatedCollection);
+};
+
 const reducer = (state = initialState, action) => {
     switch ( action.type ) {
         case actionTypes.FETCH_CITIES_COLLECTION_START: return fetchCitiesCollectionStart(state);
@@ -38,6 +45,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_CITIES_COLLECTION_FAIL: return fetchCitiesCollectionFail(state, action);
         case actionTypes.CLEAR_CITIES_COLLECTION: return clearCitiesCollection(state, action);
         case actionTypes.DELETE_CITY: return deleteCity(state, action);
+        case actionTypes.ADD_CITY: return addCity(state, action);
         default: return state;
     }
 };

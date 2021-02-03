@@ -51,7 +51,6 @@ export const deleteCity = (cityId, token) => dispatch => {
     axios.delete(`ms/ais/api/user/city?tokenId=${token}&cityId=${cityId}`)
         .then(response => {
             //  delete city from the store
-            console.log(response);
             dispatch(startDeleteCity(cityId));
         })
         .catch(error => {
@@ -59,10 +58,18 @@ export const deleteCity = (cityId, token) => dispatch => {
         });
 };
 
-export const addCity = (cityId, token) => dispatch => {
-    axios.post(`ms/ais/api/user/city?tokenId=${token}&cityId=${cityId}`)
+const addCitySuccess = city => {
+    return {
+        type: actionTypes.ADD_CITY,
+        newCity: city
+    };
+};
+
+export const addCity = (city, token) => dispatch => {
+    axios.post(`ms/ais/api/user/city?tokenId=${token}&cityId=${city.id}`)
         .then(response => {
             console.log(response.data);
+            dispatch(addCitySuccess(city));
             //  dispatch depends on the response data
             dispatch(fetchCitiesCollection(token));
         })

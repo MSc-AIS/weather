@@ -1,10 +1,7 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
-import {mapWeatherConditions} from "../../shared/utility";
-
-// import curSample from '../../assets/sample/currentAthens.json';
-// import dailySample from '../../assets/sample/daily.json';
-// import hourlySample from '../../assets/sample/hourly.json';
+import axiosWeather from '../../axios-weather';
+import { mapWeatherConditions } from '../../shared/utility';
 
 /**
  * @author Stavros Labrinos [stalab at linuxmail.org] on 28/01/21.
@@ -63,9 +60,9 @@ export const fetchConditions = city => dispatch => {
     dispatch(fetchConditionsStart());
     // concurrent async calls with join promises. Stavros Labrinos [stalab at linuxmail.org] on 2/2/21.
     Promise.all([
-        axios.get(`http://localhost:9000/ms/ais/api/forecast/current/city/${city}`),
-        axios.get(`http://localhost:9000/ms/ais/api/forecast/daily/city/${city}`),
-        axios.get(`http://localhost:9000/ms/ais/api/forecast/hourly/city/${city}`)
+        axiosWeather.get(`ms/ais/api/forecast/current/city/${city}`),
+        axiosWeather.get(`ms/ais/api/forecast/daily/city/${city}`),
+        axiosWeather.get(`ms/ais/api/forecast/hourly/city/${city}`)
     ]).then(response => {
         const { cityInfo, displayingData, forecastData } = mapWeatherConditions(response);
         //  action call to store weather condition data to the store
