@@ -75,7 +75,8 @@ const SearchCities = () => {
 
     const onAddCity = useCallback(() => {
         if (city) {
-            dispatch(addCity(city.id, token));
+            // console.log(city.cityId);
+            dispatch(addCity(city, token));
         }
     }, [dispatch, city, token]);
 

@@ -90,8 +90,10 @@ export const mapWeatherConditions = (response) => {
     const hourlyConditions = response[2].data;
 
     const cityInfo = {
-        name: currentConditions.cityGeoPoint.cityName,
-        coordinates: currentConditions.cityGeoPoint.coordinates
+        name: currentConditions.city.cityGeoPoint.cityName,
+        coordinates: currentConditions.city.cityGeoPoint.coordinates,
+        cityId: currentConditions.city.id,
+        country: currentConditions.city.country
     };
 
     const displayingData = {

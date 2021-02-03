@@ -4,11 +4,12 @@ import { updateObject } from '../../shared/utility';
 const initialState = {
     collection: [],
     loading: false,
-    collectionError: null
+    collectionError: null,
+    saved: false
 };
 
 const fetchCitiesCollectionStart = state => {
-    return updateObject(state, { loading: true });
+    return updateObject(state, { loading: true, saved: false });
 };
 
 const fetchCitiesCollectionSuccess = (state, action) => {
@@ -33,9 +34,17 @@ const deleteCity = (state, action) => {
 };
 
 const addCity = (state, action) => {
-    const updatedCollection = state.collection.concat(action.newCity);
+    const city = {
+        cityGeoPoint: {
+            coordinates: action.newCity.coordinates,
+            cityName: action.newCity.name
+        },
+        id: action.newCity.cityId,
+        country: action.newCity.country
+    }
+    const updatedCollection = state.collection.concat(city);
 
-    return updateObject(state, updatedCollection);
+    return updateObject(state, { collection: updatedCollection, saved: true });
 };
 
 const reducer = (state = initialState, action) => {

@@ -86,7 +86,7 @@ const WeatherConditions = props => {
     return (
         <Card className={classes.card}>
             <CardHeader
-                title={props.city.name}
+                title={`${props.city.name}, ${props.city.country}`}
                 subheader={`(${props.city.coordinates[0]}, ${props.city.coordinates[1]})`}
                 titleTypographyProps={{ align: 'center' }}
                 subheaderTypographyProps={{ align: 'center', color: 'initial' }}

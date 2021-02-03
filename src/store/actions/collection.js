@@ -66,12 +66,10 @@ const addCitySuccess = city => {
 };
 
 export const addCity = (city, token) => dispatch => {
-    axios.post(`ms/ais/api/user/city?tokenId=${token}&cityId=${city.id}`)
+    axios.post(`ms/ais/api/user/city?tokenId=${token}&cityId=${city.cityId}`)
         .then(response => {
-            console.log(response.data);
+            //  putting the new city in the store
             dispatch(addCitySuccess(city));
-            //  dispatch depends on the response data
-            dispatch(fetchCitiesCollection(token));
         })
         .catch(error => {
             console.log(error);
