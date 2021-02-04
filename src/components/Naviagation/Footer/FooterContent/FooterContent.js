@@ -22,7 +22,7 @@ const footerContent = props => {
                     Ακολουθήστε μας:
                 </Typography>
                 <Link
-                    href="https://github.com/users/konstantinosraptis91/projects/1"
+                    href="https://github.com/orgs/MSc-AIS/projects/1"
                     target="_blank"
                     rel="noreferrer">
                     <GitHubIcon className={classes.Icon}/>

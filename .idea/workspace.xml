@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e65be58-236a-4eeb-af22-3b07313fc43f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Cockpit/Cockpit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Cockpit/Cockpit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Cockpit/Cockpit.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Cockpit/Cockpit.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherConditions/WeatherConditions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Naviagation/Footer/FooterContent/FooterContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Naviagation/Footer/FooterContent/FooterContent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +99,7 @@
       <workItem from="1611831047101" duration="24277000" />
       <workItem from="1611868379818" duration="39302000" />
       <workItem from="1612030704936" duration="5025000" />
-      <workItem from="1612305644219" duration="20134000" />
+      <workItem from="1612305644219" duration="20575000" />
     </task>
     <servers />
   </component>
