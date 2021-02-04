@@ -6,6 +6,7 @@ import Modal from '../../components/UI/Modal/Modal';
 import PrivacyPolicy from '../../components/Naviagation/Footer/FooterContent/PrivacyPolicy';
 import Footer from '../../components/Naviagation/Footer/Footer';
 import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core';
 
 
 /**
@@ -13,7 +14,17 @@ import Container from '@material-ui/core/Container';
  * @author Stavros Labrinos [stalab at linuxmail.org] on 28/01/21.
  */
 
+const useStyles = makeStyles(theme => ({
+    mainStyled: {
+        [theme.breakpoints.up("md")]: {
+            marginTop: '3rem',
+        }
+    }
+}))
+
 const Layout = props => {
+    const classes = useStyles();
+
     const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false);
 
     const handleSideDrawerClose = () => {
@@ -41,7 +52,7 @@ const Layout = props => {
             </Modal>
             <Navbar toggleDrawer={handleSideDrawerToggle} />
             <SideDrawer open={sideDrawerIsVisible} closed={handleSideDrawerClose} />
-            <main>
+            <main className={classes.mainStyled}>
                 <Container maxWidth="lg">
                     {props.children}
                 </Container>

@@ -1,4 +1,5 @@
 import Typography from '@material-ui/core/Typography';
+import Hidden from '@material-ui/core/Hidden';
 import classes from './Cockpit.module.css';
 
 /**
@@ -9,14 +10,16 @@ import classes from './Cockpit.module.css';
 const cockpit = props => {
 
     return (
-        <Typography className={classes.Title}
-                    variant="h4"
-                    component="h2"
-                    style={{ marginBottom: '2rem' }}
-                    id="back-to-top-anchor"
-                    color="textPrimary">
-            {props.title}
-        </Typography>
+        <Hidden mdUp>
+            <Typography className={classes.Title}
+                        variant="h5"
+                        component="h2"
+                        style={{ marginBottom: '2rem' }}
+                        id="back-to-top-anchor"
+                        color="textPrimary">
+                {props.title}
+            </Typography>
+        </Hidden>
     );
 }
 

@@ -222,11 +222,27 @@ const WeatherConditions = props => {
                             <Table size="small">
                                 <TableBody>
                                     <TableRow>
-                                        {props.hours.map((hour, index) => (
-                                            <TableCell key={index} align="center">
-                                                {`${new Date(hour.timestamp * 1000).getHours()}:00`}
-                                            </TableCell>
-                                        ))}
+                                        {props.hours.map((hour, index) => {
+                                            const date = new Date(hour.timestamp * 1000);
+                                            return (
+                                                <TableCell key={index} align="center">
+                                                    {`${date.getDate()}/${date.getMonth() + 1}`}
+                                                </TableCell>
+                                            );
+                                        })}
+                                    </TableRow>
+
+
+                                    <TableRow>
+                                        {props.hours.map((hour, index) => {
+                                            return (
+                                                    <TableCell key={index} align="center">
+                                                        {/*{`${date.getDate()}/${date.getMonth() + 1}*/}
+                                                        {/* ${date.getHours()}:00`}*/}
+                                                        {`${new Date(hour.timestamp * 1000).getHours()}:00`}
+                                                    </TableCell>
+                                                )
+                                        })}
                                     </TableRow>
                                     <TableRow>
                                         {props.hours.map((hour, index) => (

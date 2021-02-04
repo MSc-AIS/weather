@@ -11,8 +11,9 @@ div .Title {
 .Title::after {
     position: absolute;
     content: "";
-    height: 7px;
-    width: 8%;
+    height: 6px;
+    width: 15%;
+    max-width: 60px;
     bottom: -16px;
     background: #116149;
     left: 0;
