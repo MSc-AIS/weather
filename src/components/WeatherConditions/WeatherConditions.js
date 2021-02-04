@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from 'react';
-import { makeStyles} from '@material-ui/core';
+import { Fragment, useEffect, useRef, useState } from 'react';
+import { makeStyles } from '@material-ui/core';
 
 import { mapIconsToDescription,
     mapIconsToWindDirection, capitalizeStr } from '../../shared/utility';
@@ -20,6 +20,7 @@ import { WiCloudDown, WiHumidity, WiCelsius,
     WiFahrenheit, WiStrongWind, WiRaindrop } from 'weather-icons-react';
 import CardActions from '@material-ui/core/CardActions';
 import SaveIcon from '@material-ui/icons/Save';
+
 /**
  * @returns {JSX.Element}
  * @author Stavros Labrinos [stalab at linuxmail.org] on 28/01/21.
@@ -57,13 +58,14 @@ const WeatherConditions = props => {
 
     const today = new Date().toLocaleDateString();
 
+    const {minTemperature, maxTemperature, feelsLike} = props.display.temperatureConditions;
+
     const [temperature, setTemperature] = useState({
         points: props.display.temperatureConditions.temperature ?
             props.display.temperatureConditions.temperature: 1,
-        feelsLike: props.display.temperatureConditions.feelsLike ?
-            props.display.temperatureConditions.feelsLike: 1,
-        min: props.display.temperatureConditions.minTemperature,
-        max: props.display.temperatureConditions.maxTemperature,
+        feelsLike: feelsLike ? feelsLike: 1,
+        min: minTemperature,
+        max: maxTemperature,
         measurement: 'celsius'
     });
 
@@ -83,6 +85,30 @@ const WeatherConditions = props => {
         });
     };
 
+    //  useRef hook to get prev state in order to update min and max temperatures
+    const usePrevious = (value) => {
+        const ref = useRef();
+        useEffect(() => {
+            ref.current = value;
+        });
+        return ref.current;
+    }
+
+    const { weatherId } = props;
+
+    const prevWeatherId = usePrevious({ weatherId });
+
+    useEffect(() => {
+        if(prevWeatherId && prevWeatherId.weatherId !== weatherId) {
+            setTemperature({
+                ...temperature,
+                min: minTemperature,
+                max: maxTemperature,
+                measurement: 'celsius'
+            });
+        }
+    }, [weatherId, temperature, prevWeatherId, minTemperature, maxTemperature]);
+
     return (
         <Card className={classes.card}>
             <CardHeader
@@ -93,6 +119,20 @@ const WeatherConditions = props => {
                 action={<WbSunnyIcon fontSize="large" />}
                 className={classes.cardHeader} />
             <CardContent>
+                {props.showInsert ?
+                    <Fragment>
+                        <CardActions className={classes.saveButton}>
+                            <Button
+                                startIcon={<SaveIcon />}
+                                size="large"
+                                color="secondary"
+                                onClick={props.insertClicked}>
+                                ΑΠΟΘΗΚΕΥΣΗ
+                            </Button>
+                        </CardActions>
+                        <hr className={classes.hrStyle} />
+                    </Fragment> : null
+                }
                 <Grid container alignItems="center" justify="center" alignContent="center">
                     <Grid item xs={4} className={classes.weatherContainer}>
                         <Grid item>
@@ -149,7 +189,7 @@ const WeatherConditions = props => {
                                 </Grid>
                             </Fragment> :
                             <Grid item>
-                                {props.display.weatherConditions.rainProbability ?
+                                {Number(props.display.weatherConditions.rainProbability) >= 0 ?
                                     <Typography component="div" variant="body2" className={classes.per}>
                                         <WiRaindrop size={36}/>
                                         {`${props.display.weatherConditions.rainProbability} %`}
@@ -219,13 +259,13 @@ const WeatherConditions = props => {
                                         key={day.id}
                                         style={{ cursor: 'pointer' }}
                                         onClick={() => props.clicked(day)}>
-                                        <TableCell align="left" colSpan={1}>
+                                        <TableCell align="left">
                                             {new Date(day.timestamp * 1000).toDateString()}
                                         </TableCell>
-                                        <TableCell align="center" colSpan={6}>
+                                        <TableCell align="left">
                                             {mapIconsToDescription(day.dailyWeatherConditions.description, 28)}
                                         </TableCell>
-                                        <TableCell align="center" colSpan={4} style={{ color: '#798186' }}>
+                                        <TableCell align="center" style={{ color: '#798186' }}>
                                             {`${Number.parseInt(day.dailyTemperatureConditions.minTemperature)} / ${Number.parseInt(day.dailyTemperatureConditions.maxTemperature)}`}
                                             <WiCelsius size={18} />
                                         </TableCell>
@@ -236,20 +276,6 @@ const WeatherConditions = props => {
                     </Table>
                 </TableContainer>
             </CardContent>
-            {props.showInsert ?
-                <Fragment>
-                    <hr className={classes.hrStyle} />
-                    <CardActions className={classes.saveButton}>
-                        <Button
-                            startIcon={<SaveIcon />}
-                            size="large"
-                            color="secondary"
-                            onClick={props.insertClicked}>
-                            ΑΠΟΘΗΚΕΥΣΗ
-                        </Button>
-                    </CardActions>
-                </Fragment> : null
-            }
         </Card>
     );
 };

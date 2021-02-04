@@ -75,7 +75,6 @@ const SearchCities = () => {
 
     const onAddCity = useCallback(() => {
         if (city) {
-            // console.log(city.cityId);
             dispatch(addCity(city, token));
         }
     }, [dispatch, city, token]);
@@ -95,12 +94,12 @@ const SearchCities = () => {
             clicked={handleDisplayingConditions} /> :
         conditionsError ?
             <Typography variant="h5" color="textPrimary">
-                <ErrorOutlineIcon style={{ fontSize: 22, paddingRight: 12 }}/>
+                <ErrorOutlineIcon style={{ fontSize: 30, paddingRight: 12, paddingTop: 10 }}/>
                 {`Δεν βρέθηκαν δεδομένα για την πόλη ${cityName}. Ελέγξτε τα φίλτρα αναζήτησης`}
             </Typography> :
             conditionsFetched ?
             <Typography variant="h5" color="error">
-                <ErrorOutlineIcon style={{ fontSize: 22, paddingRight: 12 }}/>
+                <ErrorOutlineIcon style={{ fontSize: 50, paddingRight: 12 }}/>
                 Έχετε υπερβεί το πλήθος των επιτρεπόμενων κλήσεων στοιχείων καιρού. Προσπαθήστε αργότερα
             </Typography> : null;
 

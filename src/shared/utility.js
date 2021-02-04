@@ -64,22 +64,22 @@ const windStyle = {
 
 export const mapIconsToWindDirection = direction => {
     switch (direction) {
-        case 'NORTH': return <WiDirectionUp style={windStyle} />;
-        case 'NORTH_NORTH_EAST': return <WiDirectionUp style={windStyle} />;
-        case 'NORTH_EAST': return <WiDirectionUpRight style={windStyle} />;
-        case 'EAST_NORTH_EAST': return <WiDirectionUpRight style={windStyle} />;
-        case 'EAST': return <WiDirectionRight style={windStyle} />;
-        case 'EAST_SOUTH_EAST': return <WiDirectionRight style={windStyle} />;
-        case 'SOUTH_EAST': return <WiDirectionDownRight style={windStyle} />;
-        case 'SOUTH_SOUTH_EAST': return <WiDirectionDownRight style={windStyle} />;
-        case 'SOUTH': return <WiDirectionDown style={windStyle} />;
-        case 'SOUTH_SOUTH_WEST': return <WiDirectionDown style={windStyle} />;
-        case 'SOUTH_WEST': return <WiDirectionDownLeft style={windStyle} />;
-        case 'WEST_SOUTH_WEST': return <WiDirectionDownLeft style={windStyle} />;
-        case 'WEST': return <WiDirectionLeft style={windStyle} />;
-        case 'WEST_NORTH_WEST': return <WiDirectionLeft style={windStyle} />;
-        case 'NORTH_WEST': return <WiDirectionUpLeft style={windStyle} />;
-        case 'NORTH_NORTH_WEST': return <WiDirectionUpLeft style={windStyle} />;
+        case 'NORTH': return <WiDirectionDown style={windStyle} />;
+        case 'NORTH_NORTH_EAST': return <WiDirectionDown style={windStyle} />;
+        case 'NORTH_EAST': return <WiDirectionDownLeft style={windStyle} />;
+        case 'EAST_NORTH_EAST': return <WiDirectionDownLeft style={windStyle} />;
+        case 'EAST': return <WiDirectionLeft style={windStyle} />;
+        case 'EAST_SOUTH_EAST': return <WiDirectionLeft style={windStyle} />;
+        case 'SOUTH_EAST': return <WiDirectionUpLeft style={windStyle} />;
+        case 'SOUTH_SOUTH_EAST': return <WiDirectionUpLeft style={windStyle} />;
+        case 'SOUTH': return <WiDirectionUp style={windStyle} />;
+        case 'SOUTH_SOUTH_WEST': return <WiDirectionUp style={windStyle} />;
+        case 'SOUTH_WEST': return <WiDirectionUpRight style={windStyle} />;
+        case 'WEST_SOUTH_WEST': return <WiDirectionUpRight style={windStyle} />;
+        case 'WEST': return <WiDirectionRight style={windStyle} />;
+        case 'WEST_NORTH_WEST': return <WiDirectionRight style={windStyle} />;
+        case 'NORTH_WEST': return <WiDirectionDownRight style={windStyle} />;
+        case 'NORTH_NORTH_WEST': return <WiDirectionDownRight style={windStyle} />;
         default: return <WiDirectionUp style={windStyle} />;
     }
 };
