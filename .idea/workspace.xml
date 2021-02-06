@@ -4,8 +4,8 @@
     <list default="true" id="025e1e5c-bf6f-4f09-a8d9-7f0d9d8236e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Auth/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/SignUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/currentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/currentPosition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/axios-weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios-weather.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +56,14 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="025e1e5c-bf6f-4f09-a8d9-7f0d9d8236e9" name="Default Changelist" comment="" />
+      <created>1612628270789</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612628270789</updated>
+      <workItem from="1612628273773" duration="423000" />
+    </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -66,7 +74,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
