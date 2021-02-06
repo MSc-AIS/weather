@@ -22,9 +22,8 @@ const fetchCityFail = error => {
 };
 
 export const fetchCity = () => dispatch => {
-    axios.get('https://geolocation-db.com/json')
+    axios.get('http://api.ipstack.com/check?access_key=8f0513df0cc0f66506cad2a187e485d6')
         .then(response => {
-            // console.log(response.data);
             const city = {
                 name: response.data.city,
                 coordinates: [response.data.longitude, response.data.latitude]
