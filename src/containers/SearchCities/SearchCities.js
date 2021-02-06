@@ -115,6 +115,7 @@ const SearchCities = () => {
                             label="Πόλη"
                             placeholder="Εισάγετε Πόλη"
                             fullWidth
+                            inputProps={{ pattern: '[a-z]{1,15}' }}
                             value={cityName}
                         />
                     </Grid>

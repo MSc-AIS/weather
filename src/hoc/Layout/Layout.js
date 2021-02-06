@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
             marginTop: '3rem',
         }
     }
-}))
+}));
 
 const Layout = props => {
     const classes = useStyles();

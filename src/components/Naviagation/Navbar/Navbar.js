@@ -28,8 +28,12 @@ const useStyles = makeStyles((theme) => ({
     },
     img: {
         height: 80,
-        textAlign: 'center'
+        textAlign: 'center',
+        flex: 2
     },
+    logoStyle: {
+        display: 'flex'
+    }
 }));
 
 
@@ -42,8 +46,15 @@ const Navbar = props => {
                 <Toolbar className={classes.toolbar} >
                     <CssBaseline />
                      <Grid container spacing={2} justify="space-between" alignItems="center">
-                        <Hidden mdUp>
-                            <Grid item xs={1}>
+                        <Hidden smDown>
+                            <Grid item md={3} lg={4}>
+                                <Typography variant="h5" component="h2" className={classes.title}>
+                                    AIS Weather
+                                </Typography>
+                            </Grid>
+                        </Hidden>
+                        <Grid item xs={11} md={3} lg={4} className={classes.logoStyle}>
+                            <Hidden mdUp>
                                 <IconButton
                                     edge="start"
                                     className={classes.menuButton}
@@ -52,16 +63,7 @@ const Navbar = props => {
                                     onClick={props.toggleDrawer}>
                                     <MenuIcon />
                                 </IconButton>
-                            </Grid>
-                        </Hidden>
-                        <Hidden smDown>
-                            <Grid item md={3} lg={4}>
-                                <Typography variant="h5" component="h2" className={classes.title}>
-                                    AIS Weather
-                                </Typography>
-                            </Grid>
-                        </Hidden>
-                        <Grid item xs={11} md={3} lg={4}>
+                            </Hidden>
                             <Typography component="div" className={classes.img}>
                                 <Logo logoType="appLogo" />
                             </Typography>
