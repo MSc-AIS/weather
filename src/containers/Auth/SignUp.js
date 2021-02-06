@@ -75,7 +75,7 @@ const SignUp = () => {
     const errorMsg = error ?
         <Typography variant="h5" color="error">
             <ErrorOutlineIcon style={{ fontSize: 22, paddingRight: 12 }}/>
-            Δεν είναι η εγγραφή σας. Ελέγξτε τα στοιχεία εγγραφής
+            Τα στοιχεία που δόσατε δεν είναι σωστά
         </Typography> : null;
 
     const authRedirect = isAuth ?
