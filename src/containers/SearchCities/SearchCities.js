@@ -105,7 +105,7 @@ const SearchCities = () => {
 
     return (
         <Fragment>
-            <Cockpit title="Αναζήτηση Πόλεων" />
+            <Cockpit />
             <form onSubmit={onInputCityConditions}>
                 <Grid container justify="center" spacing={3} style={{ marginBottom: 20 }}>
                     <Grid item xs={12} sm={3}>

@@ -8,13 +8,13 @@ div .Title {
     position: relative;
 }
 
-.Title::after {
-    position: absolute;
-    content: "";
-    height: 6px;
-    width: 15%;
-    max-width: 60px;
-    bottom: -16px;
-    background: #116149;
-    left: 0;
-}
+/*.Title::after {*/
+/*    position: absolute;*/
+/*    content: "";*/
+/*    height: 6px;*/
+/*    width: 15%;*/
+/*    max-width: 60px;*/
+/*    bottom: -16px;*/
+/*    background: #116149;*/
+/*    left: 0;*/
+/*}*/
