@@ -4,9 +4,7 @@
     <list default="true" id="8e65be58-236a-4eeb-af22-3b07313fc43f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CityConditions/CityConditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityConditions/CityConditions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Collections/Collections.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Collections/Collections.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/axios-weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios-weather.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,7 @@
       <workItem from="1611868379818" duration="39302000" />
       <workItem from="1612030704936" duration="5025000" />
       <workItem from="1612305644219" duration="21307000" />
-      <workItem from="1612651079010" duration="1883000" />
+      <workItem from="1612651079010" duration="3736000" />
     </task>
     <servers />
   </component>

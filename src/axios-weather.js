@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const instance = axios.create({
     //  production
-    baseURL: 'https://msc-ais-weather.site/'
+    baseURL: 'https://weather.msc-ais.site/'
     //  development
     // baseURL: 'http://localhost:9000/'
 });
