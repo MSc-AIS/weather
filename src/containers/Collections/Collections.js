@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import { Redirect } from 'react-router-dom';
 
 import axios from '../../axios-weather';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
@@ -51,6 +52,9 @@ const Collections = () => {
         dispatch(deleteCity(cityId, token));
     }, [dispatch, token]);
 
+    const authRedirect = !token ?
+        <Redirect to="/" /> : null;
+
     const cities = loading ?
         <LoadingProgress /> :
         collection.length > 0?
@@ -72,6 +76,7 @@ const Collections = () => {
     return (
         <Fragment>
             <Cockpit title="Συλλογές Πόλεων" />
+            {authRedirect}
             <Grid container spacing={2} justify="center" className={classes.containerStyle} >
                 {cities}
             </Grid>

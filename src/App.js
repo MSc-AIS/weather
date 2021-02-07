@@ -46,6 +46,8 @@ function App() {
             <Redirect to="/" />
         </Switch> :
         <Switch>
+            <Route path="/collection/:cityName" render={props => <CityConditions {...props} />} />
+            <Route path="/collection" render={props => <Collections {...props} />} />
             <Route path="/search" render={props => <SearchCities {...props} />} />
             <Route path="/auth/sign-in" render={props => <SignIn {...props} />} />
             <Route path="/auth/sign-up" render={props => <SignUp {...props} />} />
