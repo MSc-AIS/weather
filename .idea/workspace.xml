@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="025e1e5c-bf6f-4f09-a8d9-7f0d9d8236e9" name="Default Changelist" comment="">
+    <list default="true" id="8e65be58-236a-4eeb-af22-3b07313fc43f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/axios-weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios-weather.js" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/store/actions/currentPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/currentPosition.js" afterDir="false" />
->>>>>>> 9c8528b2c7a4f7f3a3f04f24d5ce753653d75d6b
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +12,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="development" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1o58CmfsbNKGhQ9cbN68l4GUx3i" />
@@ -65,8 +65,12 @@
       <created>1612628270789</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1612628270789</updated>
-      <workItem from="1612628273773" duration="423000" />
+      <updated>1611831046013</updated>
+      <workItem from="1611831047101" duration="24277000" />
+      <workItem from="1611868379818" duration="39302000" />
+      <workItem from="1612030704936" duration="5025000" />
+      <workItem from="1612305644219" duration="21307000" />
+      <workItem from="1612651079010" duration="5520000" />n
     </task>
     <servers />
   </component>

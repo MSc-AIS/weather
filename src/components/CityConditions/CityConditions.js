@@ -1,6 +1,7 @@
 import { Fragment, useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import { Redirect } from "react-router-dom";
 
 import Cockpit from '../UI/Cockpit/Cockpit';
 import { fetchInputCityConditions, setCurrentToDisplay, setForecastToDisplay } from '../../store/actions';
@@ -23,6 +24,7 @@ const CityConditions = () => {
     //  selectors
     const { city, loading, forecastConditions, conditionsFetched, conditionsError,
         displayingConditions } = useSelector(state => state.search);
+    const token = useSelector(state => state.auth.token);
 
     const onInputCityConditions =useCallback(() => {
         dispatch(fetchInputCityConditions(cityName));
@@ -45,6 +47,9 @@ const CityConditions = () => {
         }
     };
 
+    const authRedirect = !token ?
+        <Redirect to="/" /> : null;
+
     const wConditions = conditionsFetched ?
         <WeatherConditions
             city={city}
@@ -63,6 +68,7 @@ const CityConditions = () => {
     return (
         <Fragment>
             <Cockpit title="Συνθήκες Πόλης" />
+            {authRedirect}
             {wConditions}
         </Fragment>
     );

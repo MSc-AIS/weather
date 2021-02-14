@@ -10,19 +10,18 @@ import Backdrop from '../../UI/Backdrop/Backdrop';
  * @author Stavros Labrinos [stalab at linuxmail.org] on 28/01/21.
  */
 
-const sideDrawer = ( props ) => {
-    const attachedClasses = props.open ? [classes.SideDrawer, classes.Open] : [classes.SideDrawer, classes.Close];
+const sideDrawer = ({ open, closed }) => {
+    const attachedClasses = open ? [classes.SideDrawer, classes.Open] : [classes.SideDrawer, classes.Close];
 
     return (
         <Fragment>
-            <Backdrop show={props.open} clicked={props.closed}/>
-            <div className={attachedClasses.join(' ')} onClick={props.closed}>
+            <Backdrop show={open} clicked={closed}/>
+            <div className={attachedClasses.join(' ')} onClick={closed}>
                 <div className={classes.Logo}>
                     <Logo logoType="appLogo"/>
                 </div>
                 <nav>
                     <NavigationItems />
-                    {/*<NavigationItems isAuthenticated={props.isAuth} />*/}
                 </nav>
             </div>
         </Fragment>

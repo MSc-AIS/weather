@@ -10,6 +10,7 @@ import classes from './Cockpit.module.css';
 const cockpit = props => {
 
     return (
+        //  temp disable cockpit title
         <Hidden mdUp>
             <Typography className={classes.Title}
                         variant="h5"
@@ -17,7 +18,7 @@ const cockpit = props => {
                         style={{ marginBottom: '2rem' }}
                         id="back-to-top-anchor"
                         color="textPrimary">
-                {props.title}
+                {/*{props.title}*/}
             </Typography>
         </Hidden>
     );

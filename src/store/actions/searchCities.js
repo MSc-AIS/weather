@@ -37,7 +37,6 @@ export const fetchInputCityConditions = city => dispatch => {
         axiosWeather.get(`ms/ais/api/forecast/hourly/city/${city}`)
     ]).then(response => {
         const { cityInfo, displayingData, forecastData } = mapWeatherConditions(response);
-        console.log(cityInfo);
         //  action call to store weather condition data to the store
         dispatch(fetchInputCityConditionsSuccess(cityInfo, displayingData, forecastData));
     }).catch(error => {

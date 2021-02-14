@@ -55,13 +55,16 @@ const fetchConditionsFail = error => {
     };
 };
 
-export const fetchConditions = city => dispatch => {
+export const fetchConditions = () => dispatch => {
     dispatch(fetchConditionsStart());
     // concurrent async calls with join promises. Stavros Labrinos [stalab at linuxmail.org] on 2/2/21.
     Promise.all([
-        axiosWeather.get(`ms/ais/api/forecast/current/city/${city}`),
-        axiosWeather.get(`ms/ais/api/forecast/daily/city/${city}`),
-        axiosWeather.get(`ms/ais/api/forecast/hourly/city/${city}`)
+        // axiosWeather.get(`ms/ais/api/forecast/current/city/${city}`),
+        // axiosWeather.get(`ms/ais/api/forecast/daily/city/${city}`),
+        // axiosWeather.get(`ms/ais/api/forecast/hourly/city/${city}`)
+        axiosWeather.get(`ms/ais/api/forecast/current`),
+        axiosWeather.get(`ms/ais/api/forecast/daily`),
+        axiosWeather.get(`ms/ais/api/forecast/hourly`)
     ]).then(response => {
         const { cityInfo, displayingData, forecastData } = mapWeatherConditions(response);
         //  action call to store weather condition data to the store

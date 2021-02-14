@@ -5,7 +5,7 @@ import axios from 'axios';
  */
 
 const instance = axios.create({
-    baseURL: 'https://msc-ais-weather:9000/'
+    baseURL: 'https://weather.msc-ais.site/'
 });
 
 export default instance;

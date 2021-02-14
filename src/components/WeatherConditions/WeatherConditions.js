@@ -99,15 +99,26 @@ const WeatherConditions = props => {
     const prevWeatherId = usePrevious({ weatherId });
 
     useEffect(() => {
+
         if(prevWeatherId && prevWeatherId.weatherId !== weatherId) {
             setTemperature({
-                ...temperature,
+                // ...temperature,
+                points: props.display.temperatureConditions.temperature ?
+                    props.display.temperatureConditions.temperature: 1,
+                feelsLike: feelsLike ? feelsLike: 1,
                 min: minTemperature,
                 max: maxTemperature,
                 measurement: 'celsius'
             });
         }
-    }, [weatherId, temperature, prevWeatherId, minTemperature, maxTemperature]);
+    }, [
+        weatherId,
+        props.display.temperatureConditions.temperature,
+        feelsLike,
+        // temperature,
+        prevWeatherId,
+        minTemperature,
+        maxTemperature]);
 
     return (
         <Card className={classes.card}>

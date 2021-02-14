@@ -28,22 +28,28 @@ const CurrentPosition = () => {
         dispatch(actions.fetchCity());
     }, [dispatch]);
 
-    const onInitWeatherConditions  = useCallback((city) => {
-        dispatch(actions.fetchConditions(city));
+    const onInitWeatherConditions  = useCallback(() => {
+        dispatch(actions.fetchConditions());
     }, [dispatch]);
 
-
+    //  changed useEffect to handle ip location from backend Steve Labrinos 6/2/21
     useEffect(() => {
        //   get city from IP for new sessions
-       if (!city) {
+       // if (!city) {
            //   get city from public API action
-           onInitCity();
+           // onInitCity();
            //   the api may return null as success response. Checking for city again
-       } else if (!conditionsFetched && city) {
+       // } else if (!conditionsFetched && city) {
            //   get weather condition from backend action
-           onInitWeatherConditions(city.name);
-       }
-    }, [city, onInitCity, onInitWeatherConditions, conditionsFetched]);
+        if (!conditionsFetched) {
+            onInitWeatherConditions();
+        }
+       // }
+    }, [
+        // city,
+        onInitCity,
+        onInitWeatherConditions,
+        conditionsFetched]);
 
 
     const handleDisplayingConditions = day => {
@@ -65,10 +71,11 @@ const CurrentPosition = () => {
             <Typography variant="h5" color="error">
                 <ErrorOutlineIcon style={{ fontSize: 22, paddingRight: 12 }}/>
                 Δεν είναι δυνατή η λήψη της τρέχουσας τοποθεσίας. Προσπαθήστε αργότερα
-            </Typography> : <LoadingProgress /> :
-            null;
+            </Typography> :
+            null : null;
 
     const wConditions = conditionsFetched ?
+        // <p>test</p> :
         <WeatherConditions
             city={city}
             weatherId={displayingConditions.id}
