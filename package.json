@@ -2,7 +2,7 @@
   "name": "msc-ais-weather-frondend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "htpps://msc-ais-weather.site",
+  "homepage": "https://www.msc-ais.weather.site",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
